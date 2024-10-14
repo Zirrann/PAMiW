@@ -1,0 +1,41 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Strona główna";
+}
+
+
+<div class="text-center">
+
+    <h1 class="display-4" style="font-size: 48px;">MyRazorApp</h1>
+
+    <a class="btn btn-primary mt-3" asp-page="/Contact">Go to Contact Page</a>
+    <h1 class="display-4" style="font-size: 44px;">Przykład wykorzystania AJAX</h1>
+    <h1 class="display-4" style="font-size: 40px;">Generowanie losowych liczb</h1>
+
+    <!-- Przycisk do generowania losowej liczby -->
+    <button id="generateNumber" class="btn btn-primary">Generuj losową liczbę</button>
+
+    <!-- Miejsce, w którym będą wyświetlane wygenerowane liczby -->
+    <div id="randomNumbers" class="mt-3">
+        <!-- Lista wygenerowanych liczb -->
+    </div>
+</div>
+
+<p>Dowiedz się więcej o nas na stronie <a href="/about.html">O nas</a>.</p>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Obsługa kliknięcia na przycisk
+            $("#generateNumber").click(function () {
+                // Generowanie losowej liczby
+                var randomNumber = Math.floor(Math.random() * 10) + 1; // Losowa liczba od 1 do 10
+
+                // Dodanie liczby do div-a
+                $("#randomNumbers").append(randomNumber + " ");
+            });
+        });
+    </script>
+}
