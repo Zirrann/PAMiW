@@ -8,23 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Ja\\.nuget\\packages\\": {},
+    "C:\\Users\\userl\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L1\\MyRazorApp\\MyRazorApp.csproj",
+      "projectUniqueName": "C:\\Users\\userl\\Desktop\\PAMiW\\L1\\MyRazorApp\\MyRazorApp.csproj",
       "projectName": "MyRazorApp",
-      "projectPath": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L1\\MyRazorApp\\MyRazorApp.csproj",
-      "packagesPath": "C:\\Users\\Ja\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L1\\MyRazorApp\\obj\\",
+      "projectPath": "C:\\Users\\userl\\Desktop\\PAMiW\\L1\\MyRazorApp\\MyRazorApp.csproj",
+      "packagesPath": "C:\\Users\\userl\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\userl\\Desktop\\PAMiW\\L1\\MyRazorApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\userl\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -75,7 +75,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
