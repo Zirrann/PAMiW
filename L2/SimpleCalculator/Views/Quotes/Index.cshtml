@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "Your Favorite Quotes";
+}
+
+<h2>Your Favorite Quotes</h2>
+
+<div>
+    <h3>Add a New Quote</h3>
+    <form id="quoteForm" onsubmit="addQuote(event)">
+        <div>
+            <label>Quote:</label>
+            <textarea id="quoteText" required></textarea>
+        </div>
+        <div>
+            <label>Author:</label>
+            <input type="text" id="quoteAuthor" required />
+        </div>
+        <button type="submit">Add Quote</button>
+    </form>
+</div>
+
+<h3>Quotes List</h3>
+<table id="quotesTable">
+    <thead>
+        <tr>
+            <th>Quote</th>
+            <th>Author</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Cytaty będą dodawane tutaj dynamicznie -->
+    </tbody>
+</table>
+
+<script>
+    // Funkcja do dodawania cytatu
+    function addQuote(event) {
+        event.preventDefault(); // Zapobiega przeładowaniu strony
+        const text = document.getElementById("quoteText").value;
+        const author = document.getElementById("quoteAuthor").value;
+
+        // Tworzenie obiektu cytatu
+        const quote = { text, author };
+
+        // Pobieranie istniejących cytatów z Local Storage
+        const quotes = JSON.parse(localStorage.getItem("quotes")) || [];
+        quotes.push(quote); // Dodawanie nowego cytatu
+        localStorage.setItem("quotes", JSON.stringify(quotes)); // Zapisywanie do Local Storage
+
+        document.getElementById("quoteForm").reset();
+        displayQuotes();
+    }
+
+    // Funkcja do wyświetlania cytatów
+    function displayQuotes() {
+        const quotes = JSON.parse(localStorage.getItem("quotes")) || [];
+        const quotesTableBody = document.getElementById("quotesTable").getElementsByTagName("tbody")[0];
+        quotesTableBody.innerHTML = ""; // Czyści istniejące wiersze
+
+        quotes.forEach((quote, index) => {
+            const row = quotesTableBody.insertRow();
+            row.insertCell(0).textContent = quote.text;
+            row.insertCell(1).textContent = quote.author;
+
+            // Przycisk do usuwania cytatu
+            const deleteCell = row.insertCell(2);
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.onclick = () => deleteQuote(index);
+            deleteCell.appendChild(deleteButton);
+
+            // Przycisk do edytowania cytatu
+            const editButton = document.createElement("button");
+            editButton.textContent = "Edit";
+            editButton.onclick = () => editQuote(index);
+            deleteCell.appendChild(editButton);
+        });
+    }
+
+    // Funkcja do usuwania cytatu
+    function deleteQuote(index) {
+        const quotes = JSON.parse(localStorage.getItem("quotes")) || [];
+        quotes.splice(index, 1);
+        localStorage.setItem("quotes", JSON.stringify(quotes));
+        displayQuotes();
+    }
+
+    // Funkcja do edytowania cytatu
+    function editQuote(index) {
+        const quotes = JSON.parse(localStorage.getItem("quotes")) || [];
+        document.getElementById("quoteText").value = quotes[index].text;
+        document.getElementById("quoteAuthor").value = quotes[index].author;
+
+        // Usunięcie cytatu przed edytowaniem
+        deleteQuote(index);
+    }
+
+    // Wyświetl cytaty po załadowaniu strony
+    window.onload = displayQuotes;
+</script>

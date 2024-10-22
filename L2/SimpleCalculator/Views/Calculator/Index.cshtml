@@ -1,29 +1,24 @@
 @model SimpleCalculator.Models.CalculatorModel
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Kalkulator</title>
-</head>
-<body>
-    <h2>Prosty kalkulator</h2>
-    @using (Html.BeginForm())
-    {
+<h2>Simple Calculator</h2>
+
+<form asp-action="Index" method="post">
     <div>
-        <label>Liczba 1:</label>
-        @Html.TextBoxFor(m => m.Number1)
+        <label for="Number1">First Number:</label>
+        <input type="number" name="Number1" value="@Model.Number1" step="any" />
     </div>
     <div>
-        <label>Liczba 2:</label>
-        @Html.TextBoxFor(m => m.Number2)
+        <label for="Number2">Second Number:</label>
+        <input type="number" name="Number2" value="@Model.Number2" step="any" />
     </div>
     <div>
-        <input type="submit" value="Dodaj" />
+        <button type="submit">Calculate</button>
     </div>
-    }
-    @if (Model != null)
-    {
-    <h3>Wynik: @Model.Result</h3>
-    }
-</body>
-</html>
+</form>
+
+@if (Model != null)
+{
+    <div>
+        <h3>Result: @Model.Result</h3>
+    </div>
+}

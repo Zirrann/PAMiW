@@ -1,25 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 using SimpleCalculator.Models;
 
-namespace SimpleCalculator.Controllers
+public class CalculatorController : Controller
 {
-	public class CalculatorController : Controller
-	{
-		// Akcja GET do wyœwietlania formularza
-		public ActionResult Index()
-		{
-			return View();
-		}
+    [HttpGet]
+    public IActionResult Index()
+    {
+        // Tworzymy now¹ instancjê modelu, aby unikn¹æ NullReferenceException
+        var model = new CalculatorModel();
+        return View(model);
+    }
 
-		// Akcja POST do obliczenia wyniku
-		[HttpPost]
-		public ActionResult Index(CalculatorModel model)
-		{
-			// Obliczenie sumy i przypisanie wyniku do modelu
-			model.Result = model.Number1 + model.Number2;
+    [HttpPost]
+    public IActionResult Index(CalculatorModel model)
+    {
+        // Logika obliczeñ (przyk³adowo sumowanie dwóch liczb)
+        model.Result = model.Number1 + model.Number2;
 
-			// Przekazanie modelu do widoku
-			return View(model);
-		}
-	}
+        return View(model);
+    }
 }
