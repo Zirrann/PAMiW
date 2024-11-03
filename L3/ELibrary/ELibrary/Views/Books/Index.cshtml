@@ -1,0 +1,101 @@
+﻿@model IEnumerable<ELibrary.Models.Book>
+
+<div class="card">
+    <div class="card-header text-center">
+        <h4 class="card-title">Filters</h4>
+    </div>
+    <div class="card-body">
+        <!-- Filter Form -->
+        <form method="get" action="@Url.Action("Index")" class="d-flex flex-column align-items-center">
+            <div class="w-100 mb-3 text-center">
+                <!-- Genre Filter -->
+                <div class="mb-3 text-center">
+                    <label for="Genre" class="form-label">Genre</label>
+                    <select id="Genre" name="genre" class="form-control mx-auto" style="max-width: 300px;">
+                        @foreach (var genre in ViewBag.AllGenres)
+                        {
+                            <option value="@genre">@genre</option>
+                        }
+                    </select>
+                </div>
+
+                <!-- Availability Filter -->
+
+                <div class="form-check">
+                    <label class="form-check-label" for="availabilityCheckbox">
+                        <input class="form-check-input" type="checkbox" name="availability" id="availabilityCheckbox"
+                               value="true" @(ViewBag.CurrentAvailability == true ? "checked" : "") />
+                        Only Available
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="mt-3 text-center">
+                <button type="submit" class="btn btn-primary">Filter</button>
+                <a href="@Url.Action("Index")" class="btn btn-secondary ms-2">Clear Filters</a>
+            </div>
+        </form>
+    </div>
+</div>
+        <!-- Books Table -->
+<div class="card mb-3 text-center">
+    <a href="@Url.Action("Create")" class="btn btn-success btn-sm btn-round ">Add New Book</a>
+</div>
+
+<div class="card mb-3 text-center">
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th class="text-center">#</th>
+                <th>
+                    @Html.ActionLink("Title", "Index",
+                            new { sortOrder = ViewBag.TitleSortParam, search = ViewBag.CurrentSearch, genre = ViewBag.CurrentGenre, availability = ViewBag.CurrentAvailability })
+                </th>
+                <th>
+                    @Html.ActionLink("Author", "Index",
+                            new { sortOrder = ViewBag.AuthorSortParam, search = ViewBag.CurrentSearch, genre = ViewBag.CurrentGenre, availability = ViewBag.CurrentAvailability })
+                </th>
+                <th>
+                    @Html.ActionLink("Genre", "Index",
+                            new { sortOrder = ViewBag.GenreSortParam, search = ViewBag.CurrentSearch, genre = ViewBag.CurrentGenre, availability = ViewBag.CurrentAvailability })
+                </th>
+                <th>Published Date</th>
+                <th class="text-center">Availability</th>
+                <th class="text-right">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var index = 1;
+
+                foreach (var book in Model)
+                {
+                    <tr>
+                        <td class="text-center">@index</td>
+                        <td>@book.Title</td>
+                        <td>@book.Author</td>
+                        <td>@book.Genre</td>
+                        <td>@book.PublishedYear</td>
+                        <td class="text-center">@((book.IsAvailable) ? "Yes" : "No")</td>
+                        <td class="td-actions text-right">
+                            <a href="@Url.Action("Edit", new { id = book.Id })" class="btn btn-info btn-sm btn-round btn-icon" rel="tooltip" title="Edit">
+                                <i class="now-ui-icons ui-2_settings-90"></i>
+                            </a>
+                            <a href="@Url.Action("Delete", new { id = book.Id })" class="btn btn-danger btn-sm btn-round btn-icon" rel="tooltip" title="Delete">
+                                <i class="now-ui-icons ui-1_simple-remove"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    index++;
+                }
+            }
+        </tbody>
+    </table>
+
+        </div>
+    </div>
+</div>

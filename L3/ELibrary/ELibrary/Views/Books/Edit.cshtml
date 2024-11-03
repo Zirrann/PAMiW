@@ -1,0 +1,41 @@
+﻿@model ELibrary.Models.Book
+
+<h2>Edit Book</h2>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.Id)
+
+    <div class="form-group">
+        <label for="Title">Title</label>
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label for="Author">Author</label>
+        @Html.TextBoxFor(m => m.Author, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label for="Genre">Genre</label>
+        @Html.TextBoxFor(m => m.Genre, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="PublishedYear">Published Year</label>
+        @Html.TextBoxFor(m => m.PublishedYear, new
+            {
+                @class = "form-control",
+                type = "number",
+                min = "1000",
+                max = DateTime.Now.Year,
+                value = Model.PublishedYear
+            })
+    </div>
+
+
+    <div class="form-group">
+        <label for="IsAvailable">Availability</label>
+        @Html.CheckBoxFor(m => m.IsAvailable)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+}

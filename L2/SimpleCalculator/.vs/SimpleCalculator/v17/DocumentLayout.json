@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l2\\simplecalculator\\models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|solutionrelative:models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l2\\simplecalculator\\models\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|solutionrelative:models\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l2\\simplecalculator\\views\\quotes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|solutionrelative:views\\quotes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l2\\simplecalculator\\controllers\\quotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|solutionrelative:controllers\\quotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l2\\simplecalculator\\models\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|solutionrelative:models\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l2\\simplecalculator\\models\\calculatormodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l2\\simplecalculator\\extensions\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|solutionrelative:extensions\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l2\\simplecalculator\\models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{072807B3-F498-41F8-9A8E-F0AFC20251F0}|SimpleCalculator.csproj|solutionrelative:models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,7 +70,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Quote.cs",
               "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Models\\Quote.cs",
               "RelativeDocumentMoniker": "Models\\Quote.cs",
@@ -84,19 +84,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAQwCoAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T08:35:12.961Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -104,12 +91,11 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T09:45:02.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T09:45:02.738Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Views\\Quotes\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Quotes\\Index.cshtml",
@@ -122,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
@@ -130,51 +116,11 @@
               "RelativeToolTip": "Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T09:12:47.43Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T09:12:47.43Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Views\\Todo\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Todo\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Views\\Todo\\Index.cshtml",
-              "RelativeToolTip": "Views\\Todo\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T09:04:10.256Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Views\\Calculator\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Calculator\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Views\\Calculator\\Index.cshtml",
-              "RelativeToolTip": "Views\\Calculator\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T08:41:05.715Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TodoController.cs",
-              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Controllers\\TodoController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TodoController.cs",
-              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Controllers\\TodoController.cs",
-              "RelativeToolTip": "Controllers\\TodoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T09:01:36.41Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "TodoItem.cs",
               "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Models\\TodoItem.cs",
               "RelativeDocumentMoniker": "Models\\TodoItem.cs",
@@ -187,7 +133,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAQwCoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T08:35:12.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Views\\Todo\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Todo\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Views\\Todo\\Index.cshtml",
+              "RelativeToolTip": "Views\\Todo\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T09:04:10.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Views\\Calculator\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Calculator\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Views\\Calculator\\Index.cshtml",
+              "RelativeToolTip": "Views\\Calculator\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T08:41:05.715Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TodoController.cs",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Controllers\\TodoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TodoController.cs",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Controllers\\TodoController.cs",
+              "RelativeToolTip": "Controllers\\TodoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T09:01:36.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "CalculatorModel.cs",
               "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Models\\CalculatorModel.cs",
               "RelativeDocumentMoniker": "Models\\CalculatorModel.cs",
@@ -195,12 +189,11 @@
               "RelativeToolTip": "Models\\CalculatorModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T08:40:16.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T08:40:16.234Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CalculatorController.cs",
               "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Controllers\\CalculatorController.cs",
               "RelativeDocumentMoniker": "Controllers\\CalculatorController.cs",
@@ -208,12 +201,11 @@
               "RelativeToolTip": "Controllers\\CalculatorController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T08:40:07.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T08:40:07.034Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "QuotesController.cs",
               "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Controllers\\QuotesController.cs",
               "RelativeDocumentMoniker": "Controllers\\QuotesController.cs",
@@ -221,12 +213,11 @@
               "RelativeToolTip": "Controllers\\QuotesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T16:01:40.496Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T16:01:40.496Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "SessionExtensions.cs",
               "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L2\\SimpleCalculator\\Extensions\\SessionExtensions.cs",
               "RelativeDocumentMoniker": "Extensions\\SessionExtensions.cs",
@@ -234,8 +225,7 @@
               "RelativeToolTip": "Extensions\\SessionExtensions.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T09:07:07.649Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T09:07:07.649Z"
             }
           ]
         }
