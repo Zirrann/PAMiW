@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:L4.ViewModels"
+             x:Class="L4.MainPage"
+             BackgroundColor="#f3f4f6">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,10" Spacing="20">
+
+            <!-- Nowy produkt -->
+            <Button
+                Text="New Product"
+                Command="{Binding NewCommand}"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                CornerRadius="10"
+                FontSize="Medium"
+                Padding="10" />
+
+            <!-- Wyszukiwarka produktów -->
+            <SearchBar 
+                Placeholder="Search products..."
+                Text="{Binding SearchText, Mode=TwoWay}"
+                SearchCommand="{Binding SearchCommand}"
+                BackgroundColor="White"
+                PlaceholderColor="#888"
+                FontSize="Medium"
+                Margin="0,5"
+                HeightRequest="40" />
+
+            <!-- Lista produktów -->
+            <CollectionView ItemsSource="{Binding Products}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame 
+                            BackgroundColor="#ffffff" 
+                            Padding="15" 
+                            Margin="0,5" 
+                            CornerRadius="12" 
+                            HasShadow="True" 
+                            BorderColor="#cccccc">
+
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=ShowDetailsCommand}" 
+                                    CommandParameter="{Binding}" />
+                            </Frame.GestureRecognizers>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!-- Pierwszy wiersz: Tytuł i Identyfikator -->
+                                <HorizontalStackLayout Grid.Row="0" Spacing="8">
+                                    <Label Text="{Binding Id}" TextColor="#555" FontAttributes="Bold" FontSize="Large" />
+                                    <Label Text="{Binding Title}" TextColor="#333" FontAttributes="Bold" FontSize="Large" />
+                                </HorizontalStackLayout>
+
+                                <!-- Drugi wiersz: Opis -->
+                                <Label Grid.Row="1" Text="{Binding Description}" TextColor="#666" FontSize="Medium" />
+
+                                <!-- Trzeci wiersz: Kod kreskowy, cena i data wydania -->
+                                <HorizontalStackLayout Grid.Row="2" Spacing="12">
+                                    <Label Text="Barcode:" TextColor="#555" FontSize="Small" />
+                                    <Label Text="{Binding Barcode}" TextColor="#333" FontSize="Small" FontAttributes="Bold" />
+
+                                    <Label Text=" Price:" TextColor="#555" FontSize="Small" />
+                                    <Label Text="{Binding Price, StringFormat='{0} zł'}" TextColor="#333" FontSize="Small" FontAttributes="Bold" />
+
+                                    <Label Text=" Release Date:" TextColor="#555" FontSize="Small" />
+                                    <Label Text="{Binding ReleaseDate, StringFormat='{0:dd.MM.yyyy}'}" TextColor="#333" FontSize="Small" />
+                                </HorizontalStackLayout>
+
+                                <!-- Przycisk edycji -->
+                                <Button 
+                                    Grid.Row="3" 
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=ShowDetailsCommand}" 
+                                    CommandParameter="{Binding}" 
+                                    Text="Edit"
+                                    BackgroundColor="#1976D2" 
+                                    TextColor="White" 
+                                    CornerRadius="8"
+                                    FontSize="Small" 
+                                    Padding="5" 
+                                    Margin="0,8,0,0" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
