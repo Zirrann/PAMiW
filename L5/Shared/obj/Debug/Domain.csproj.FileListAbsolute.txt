@@ -1,0 +1,10 @@
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Domain\Domain\bin\Debug\Domain.dll
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Domain\Domain\bin\Debug\Domain.pdb
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Domain\Domain\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Domain\Domain\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Domain\Domain\bin\Debug\Microsoft.Analytics.Types.dll
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Domain\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Domain\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Domain\Domain\obj\Debug\Domain.csproj.Up2Date
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Domain\Domain\obj\Debug\Domain.dll
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Domain\Domain\obj\Debug\Domain.pdb
