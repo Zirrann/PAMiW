@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Shop.DB.Services;
 using Shared.Models;
 using Shared.Services;
 using Shop.DB.DTO;
@@ -9,69 +8,50 @@ namespace Shop.DB.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrderProductsController : ControllerBase
+    public class OrderProductController : CrudController<OrderProduct, OrderProductDto, OrderProductKey>
     {
-        private readonly IOrderProductService _orderProductService;
-        private readonly IMapper _mapper;
-
-        public OrderProductsController(IOrderProductService orderProductService, IMapper mapper)
+        public OrderProductController(IOrderProductService service, IMapper mapper)
+            : base(service, mapper)
         {
-            _orderProductService = orderProductService;
-            _mapper = mapper;
         }
 
-        // GET: api/OrderProducts
-        [HttpGet]
-        public async Task<IActionResult> GetAllOrderProducts()
+        // GET: api/[controller]/{orderId}/{productId}
+        [HttpGet("{orderId}/{productId}")]
+        public virtual async Task<IActionResult> GetById(int orderId, int productId)
         {
-            var response = await _orderProductService.GetAllAsync();
+            var id = new OrderProductKey
+            {
+                OrderId = orderId,
+                ProductId = productId
+            };
+
+            var response = await _service.GetByIdAsync(id);
             if (response.Success)
             {
-                var orderProductDtos = _mapper.Map<IEnumerable<OrderProductDto>>(response.Data);
-                return Ok(orderProductDtos);
+                var dto = _mapper.Map<OrderProductDto>(response.Data);
+                return Ok(dto);
             }
+            if (response.Data == null)
+                return NotFound(response.Message);
             return StatusCode(500, response.Message);
         }
 
-        // GET: api/OrderProducts/order/{orderId}
-        [HttpGet("order/{orderId}")]
-        public async Task<IActionResult> GetOrderProductsByOrderId(int orderId)
+
+        // DELETE: api/[controller]/{orderId}/{productId}
+        [HttpDelete("{orderId}/{productId}")]
+        public virtual async Task<IActionResult> Delete(int orderId, int productId)
         {
-            var response = await _orderProductService.GetOrderProductsByOrderIdAsync(orderId);
-            if (response.Success)
+            var id = new OrderProductKey
             {
-                var orderProductDtos = _mapper.Map<IEnumerable<OrderProductDto>>(response.Data);
-                return Ok(orderProductDtos);
-            }
-            return StatusCode(500, response.Message);
-        }
+                OrderId = orderId,
+                ProductId = productId
+            };
 
-        // POST: api/OrderProducts
-        [HttpPost]
-        public async Task<IActionResult> CreateOrderProduct([FromBody] OrderProductDto orderProductDto)
-        {
-            if (orderProductDto == null)
-                return BadRequest("OrderProduct cannot be null.");
-
-            var orderProduct = _mapper.Map<OrderProduct>(orderProductDto);
-            var response = await _orderProductService.CreateAsync(orderProduct);
-
-            if (response.Success)
-            {
-                var createdOrderProductDto = _mapper.Map<OrderProductDto>(response.Data);
-                return CreatedAtAction(nameof(GetAllOrderProducts), new { id = createdOrderProductDto.OrderId }, createdOrderProductDto);
-            }
-
-            return StatusCode(500, response.Message);
-        }
-
-        // DELETE: api/OrderProducts/{id}
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteOrderProduct(int id)
-        {
-            var response = await _orderProductService.DeleteAsync(id);
+            var response = await _service.DeleteAsync(id);
             if (response.Success)
                 return Ok(response.Message);
+            if (response.Message == "Entity not found.")
+                return NotFound(response.Message);
             return StatusCode(500, response.Message);
         }
     }

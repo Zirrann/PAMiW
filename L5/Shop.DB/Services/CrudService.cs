@@ -14,9 +14,9 @@ namespace Shop.DB.Services
             _dbSet = _dbContext.Set<T>();
         }
 
-        protected ServiceReponse<T> HandleException<T>(Exception ex)
+        protected ServiceReponse<TResponse> HandleException<TResponse>(Exception ex)
         {
-            return new ServiceReponse<T>
+            return new ServiceReponse<TResponse>
             {
                 Success = false,
                 Message = ex.Message,
@@ -26,120 +26,145 @@ namespace Shop.DB.Services
 
         public virtual async Task<ServiceReponse<IEnumerable<T>>> GetAllAsync()
         {
-            var response = new ServiceReponse<IEnumerable<T>>();
             try
             {
-                response.Data = await _dbSet.ToListAsync();
-                response.Success = true;
+                var data = await _dbSet.ToListAsync();
+                return new ServiceReponse<IEnumerable<T>>
+                {
+                    Data = data,
+                    Success = true
+                };
             }
             catch (Exception ex)
             {
-                response.Success = false;
-                response.Message = ex.Message;
+                return HandleException<IEnumerable<T>>(ex);
             }
-            return response;
         }
 
-        public async Task<ServiceReponse<T>> GetByIdAsync(TKey id)
+        public virtual async Task<ServiceReponse<T>> GetByIdAsync(TKey id)
         {
-            var response = new ServiceReponse<T>();
             try
             {
                 var entity = await _dbSet.FindAsync(id);
                 if (entity == null)
                 {
-                    response.Success = false;
-                    response.Message = "Entity not found.";
+                    return new ServiceReponse<T>
+                    {
+                        Success = false,
+                        Message = "Entity not found."
+                    };
                 }
-                else
+
+                return new ServiceReponse<T>
                 {
-                    response.Data = entity;
-                    response.Success = true;
-                }
+                    Data = entity,
+                    Success = true
+                };
             }
             catch (Exception ex)
             {
-                response.Success = false;
-                response.Message = ex.Message;
+                return HandleException<T>(ex);
             }
-            return response;
         }
 
         public virtual async Task<ServiceReponse<T>> CreateAsync(T entity)
         {
-            var response = new ServiceReponse<T>();
             try
             {
                 _dbSet.Add(entity);
                 await _dbContext.SaveChangesAsync();
-                response.Data = entity;
-                response.Success = true;
-                response.Message = "Entity created successfully.";
+                return new ServiceReponse<T>
+                {
+                    Data = entity,
+                    Success = true,
+                    Message = "Entity created successfully."
+                };
             }
             catch (Exception ex)
             {
-                response.Success = false;
-                response.Message = ex.Message;
+                return HandleException<T>(ex);
             }
-            return response;
         }
 
-        public async Task<ServiceReponse<T>> UpdateAsync(TKey id, T entity)
+        public virtual async Task<ServiceReponse<T>> UpdateAsync(TKey id, T entity)
         {
-            var response = new ServiceReponse<T>();
             try
             {
                 var existingEntity = await _dbSet.FindAsync(id);
                 if (existingEntity == null)
                 {
-                    response.Success = false;
-                    response.Message = "Entity not found.";
+                    return new ServiceReponse<T>
+                    {
+                        Success = false,
+                        Message = "Entity not found."
+                    };
                 }
-                else
+
+                _dbContext.Entry(existingEntity).CurrentValues.SetValues(entity);
+                await _dbContext.SaveChangesAsync();
+                return new ServiceReponse<T>
                 {
-                    _dbContext.Entry(existingEntity).CurrentValues.SetValues(entity);
-                    await _dbContext.SaveChangesAsync();
-                    response.Data = entity;
-                    response.Success = true;
-                    response.Message = "Entity updated successfully.";
-                }
+                    Data = entity,
+                    Success = true,
+                    Message = "Entity updated successfully."
+                };
             }
             catch (Exception ex)
             {
-                response.Success = false;
-                response.Message = ex.Message;
+                return HandleException<T>(ex);
             }
-            return response;
         }
 
-        public async Task<ServiceReponse<bool>> DeleteAsync(TKey id)
+        public virtual async Task<ServiceReponse<bool>> DeleteAsync(TKey id)
         {
-            var response = new ServiceReponse<bool>();
             try
             {
                 var entity = await _dbSet.FindAsync(id);
                 if (entity == null)
                 {
-                    response.Success = false;
-                    response.Message = "Entity not found.";
-                    response.Data = false;
+                    return new ServiceReponse<bool>
+                    {
+                        Success = false,
+                        Message = "Entity not found.",
+                        Data = false
+                    };
                 }
-                else
+
+                _dbSet.Remove(entity);
+                await _dbContext.SaveChangesAsync();
+                return new ServiceReponse<bool>
                 {
-                    _dbSet.Remove(entity);
-                    await _dbContext.SaveChangesAsync();
-                    response.Data = true;
-                    response.Success = true;
-                    response.Message = "Entity deleted successfully.";
-                }
+                    Data = true,
+                    Success = true,
+                    Message = "Entity deleted successfully."
+                };
             }
             catch (Exception ex)
             {
-                response.Success = false;
-                response.Message = ex.Message;
-                response.Data = false;
+                return HandleException<bool>(ex);
             }
-            return response;
         }
+
+        public virtual async Task<ServiceReponse<bool>> DeleteAllAsync()
+        {
+            try
+            {
+                // Usunięcie wszystkich rekordów w tabeli
+                _dbSet.RemoveRange(_dbSet);
+                await _dbContext.SaveChangesAsync();
+
+                return new ServiceReponse<bool>
+                {
+                    Data = true,
+                    Success = true,
+                    Message = "All entities deleted successfully."
+                };
+            }
+            catch (Exception ex)
+            {
+                return HandleException<bool>(ex);
+            }
+        }
+
     }
 }

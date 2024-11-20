@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.DB", "Shop.DB\Shop.DB.csproj", "{2A79EAFC-000F-484A-81F8-E1D7E580C679}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.MAUI", "Shop.MAUI\Shop.MAUI.csproj", "{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{2A79EAFC-000F-484A-81F8-E1D7E580C679}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A79EAFC-000F-484A-81F8-E1D7E580C679}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A79EAFC-000F-484A-81F8-E1D7E580C679}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

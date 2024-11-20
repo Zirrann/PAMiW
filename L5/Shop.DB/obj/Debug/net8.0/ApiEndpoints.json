@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "Shop.DB.Controllers.OrderProductsController",
-    "Method": "GetAllOrderProducts",
-    "RelativePath": "api/OrderProducts",
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Category, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.CategoryDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "GetAll",
+    "RelativePath": "api/Categoty",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -10,25 +10,62 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shop.DB.Controllers.OrderProductsController",
-    "Method": "CreateOrderProduct",
-    "RelativePath": "api/OrderProducts",
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Category, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.CategoryDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "Create",
+    "RelativePath": "api/Categoty",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "orderProductDto",
-        "Type": "Shop.DB.DTO.OrderProductDto",
+        "Name": "dto",
+        "Type": "Shop.DB.DTO.CategoryDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shop.DB.Controllers.OrderProductsController",
-    "Method": "DeleteOrderProduct",
-    "RelativePath": "api/OrderProducts/{id}",
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Category, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.CategoryDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "GetById",
+    "RelativePath": "api/Categoty/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Category, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.CategoryDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "Update",
+    "RelativePath": "api/Categoty/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Shop.DB.DTO.CategoryDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Category, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.CategoryDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "Delete",
+    "RelativePath": "api/Categoty/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -42,9 +79,197 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shop.DB.Controllers.OrderProductsController",
-    "Method": "GetOrderProductsByOrderId",
-    "RelativePath": "api/OrderProducts/order/{orderId}",
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Category, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.CategoryDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "DeleteAll",
+    "RelativePath": "api/Categoty/all",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Order, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.OrderDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "GetAll",
+    "RelativePath": "api/Order",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Order, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.OrderDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "Create",
+    "RelativePath": "api/Order",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Shop.DB.DTO.OrderDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Order, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.OrderDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "GetById",
+    "RelativePath": "api/Order/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Order, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.OrderDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "Update",
+    "RelativePath": "api/Order/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Shop.DB.DTO.OrderDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Order, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.OrderDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "Delete",
+    "RelativePath": "api/Order/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Order, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.OrderDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "DeleteAll",
+    "RelativePath": "api/Order/all",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.OrderProduct, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.OrderProductDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shared.Models.OrderProductKey, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAll",
+    "RelativePath": "api/OrderProduct",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.OrderProduct, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.OrderProductDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shared.Models.OrderProductKey, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Create",
+    "RelativePath": "api/OrderProduct",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Shop.DB.DTO.OrderProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.OrderProduct, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.OrderProductDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shared.Models.OrderProductKey, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetById",
+    "RelativePath": "api/OrderProduct/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "Shared.Models.OrderProductKey",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.OrderProduct, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.OrderProductDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shared.Models.OrderProductKey, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Update",
+    "RelativePath": "api/OrderProduct/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Shop.DB.DTO.OrderProductDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.OrderProduct, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.OrderProductDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shared.Models.OrderProductKey, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "api/OrderProduct/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "Shared.Models.OrderProductKey",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.OrderProductController",
+    "Method": "GetById",
+    "RelativePath": "api/OrderProduct/{orderId}/{productId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -53,83 +278,30 @@
         "Name": "orderId",
         "Type": "System.Int32",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Shop.DB.Controllers.OrdersController",
-    "Method": "GetAllOrders",
-    "RelativePath": "api/Orders",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Shop.DB.Controllers.OrdersController",
-    "Method": "CreateOrder",
-    "RelativePath": "api/Orders",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "orderDto",
-        "Type": "Shop.DB.DTO.OrderDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Shop.DB.Controllers.OrdersController",
-    "Method": "GetOrderById",
-    "RelativePath": "api/Orders/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Shop.DB.Controllers.OrdersController",
-    "Method": "UpdateOrder",
-    "RelativePath": "api/Orders/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
       },
       {
-        "Name": "orderDto",
-        "Type": "Shop.DB.DTO.OrderDto",
+        "Name": "productId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shop.DB.Controllers.OrdersController",
-    "Method": "DeleteOrder",
-    "RelativePath": "api/Orders/{id}",
+    "ContainingType": "Shop.DB.Controllers.OrderProductController",
+    "Method": "Delete",
+    "RelativePath": "api/OrderProduct/{orderId}/{productId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "productId",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -137,8 +309,18 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shop.DB.Controllers.ProductsController",
-    "Method": "GetAllProducts",
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.OrderProduct, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.OrderProductDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shared.Models.OrderProductKey, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "DeleteAll",
+    "RelativePath": "api/OrderProduct/all",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Product, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.ProductDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "GetAll",
     "RelativePath": "api/Products",
     "HttpMethod": "GET",
     "IsController": true,
@@ -147,15 +329,15 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shop.DB.Controllers.ProductsController",
-    "Method": "CreateProduct",
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Product, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.ProductDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "Create",
     "RelativePath": "api/Products",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "productDto",
+        "Name": "dto",
         "Type": "Shop.DB.DTO.ProductDto",
         "IsRequired": true
       }
@@ -163,8 +345,8 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shop.DB.Controllers.ProductsController",
-    "Method": "GetProductById",
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Product, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.ProductDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "GetById",
     "RelativePath": "api/Products/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -179,8 +361,8 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shop.DB.Controllers.ProductsController",
-    "Method": "UpdateProduct",
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Product, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.ProductDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "Update",
     "RelativePath": "api/Products/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -192,7 +374,7 @@
         "IsRequired": true
       },
       {
-        "Name": "productDto",
+        "Name": "dto",
         "Type": "Shop.DB.DTO.ProductDto",
         "IsRequired": true
       }
@@ -200,8 +382,8 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shop.DB.Controllers.ProductsController",
-    "Method": "DeleteProduct",
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Product, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.ProductDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "Delete",
     "RelativePath": "api/Products/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -216,9 +398,45 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shop.DB.Controllers.ProductsController",
-    "Method": "GetProductWithStock",
-    "RelativePath": "api/Products/{id}/stock",
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Product, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.ProductDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "DeleteAll",
+    "RelativePath": "api/Products/all",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Stock, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.StockDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "GetAll",
+    "RelativePath": "api/Stock",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Stock, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.StockDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "Create",
+    "RelativePath": "api/Stock",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Shop.DB.DTO.StockDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Stock, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.StockDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "GetById",
+    "RelativePath": "api/Stock/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -232,19 +450,50 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shop.DB.Controllers.ProductsController",
-    "Method": "GetProductsByCategoryId",
-    "RelativePath": "api/Products/category/{categoryId}",
-    "HttpMethod": "GET",
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Stock, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.StockDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "Update",
+    "RelativePath": "api/Stock/{id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "categoryId",
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Shop.DB.DTO.StockDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Stock, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.StockDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "Delete",
+    "RelativePath": "api/Stock/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shop.DB.Controllers.CrudController\u00603[[Shared.Models.Stock, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Shop.DB.DTO.StockDto, Shop.DB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "DeleteAll",
+    "RelativePath": "api/Stock/all",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

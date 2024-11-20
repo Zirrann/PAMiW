@@ -13,5 +13,6 @@ namespace Shared.Services
         Task<ServiceReponse<T>> CreateAsync(T entity);
         Task<ServiceReponse<T>> UpdateAsync(TKey id, T entity);
         Task<ServiceReponse<bool>> DeleteAsync(TKey id);
+        Task<ServiceReponse<bool>> DeleteAllAsync();
     }
 }

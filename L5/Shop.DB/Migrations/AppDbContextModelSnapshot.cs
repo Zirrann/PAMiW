@@ -34,7 +34,7 @@ namespace Shop.DB.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Shared.Models.Order", b =>
@@ -50,7 +50,7 @@ namespace Shop.DB.Migrations
 
                     b.HasKey("OrderId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Shared.Models.OrderProduct", b =>
@@ -65,7 +65,7 @@ namespace Shop.DB.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderProducts");
+                    b.ToTable("OrderProducts", (string)null);
                 });
 
             modelBuilder.Entity("Shared.Models.Product", b =>
@@ -95,7 +95,7 @@ namespace Shop.DB.Migrations
                     b.HasIndex("StockId")
                         .IsUnique();
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Shared.Models.Stock", b =>
@@ -111,7 +111,7 @@ namespace Shop.DB.Migrations
 
                     b.HasKey("StockId");
 
-                    b.ToTable("Stocks");
+                    b.ToTable("Stocks", (string)null);
                 });
 
             modelBuilder.Entity("Shared.Models.OrderProduct", b =>

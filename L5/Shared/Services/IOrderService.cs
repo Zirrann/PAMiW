@@ -1,13 +1,14 @@
 ﻿using Shared.Models;
-using Shared.Services;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop.DB.Services
+namespace Shared.Services
 {
-    public interface IOrderService : ICrudService<Order, int>
+    public interface IOrderService : ICrudService<Order,int>
     {
-        Task<ServiceReponse<IEnumerable<Order>>> GetOrdersWithOrderProductsAsync();
-        Task<ServiceReponse<Order>> GetOrderWithOrderProductsByIdAsync(int orderId);
+
     }
 }

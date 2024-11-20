@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shared.Services
 {
-    public interface IOrderProductService : ICrudService<OrderProduct, int>
+    public interface IOrderProductService : ICrudService<OrderProduct, OrderProductKey>
     {
-        Task<ServiceReponse<IEnumerable<OrderProduct>>> GetOrderProductsByOrderIdAsync(int orderId);
     }
 }

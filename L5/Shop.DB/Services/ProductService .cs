@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿    using Microsoft.EntityFrameworkCore;
 using Shared.Models;
 using Shared.Services;
 
@@ -6,7 +6,14 @@ namespace Shop.DB.Services
 {
     public class ProductService : CrudService<Product, int>, IProductService
     {
-        public ProductService(AppDbContext dbContext) : base(dbContext) { }
+        ICategoryService _categoryService;
+        IStockService _stockService;
+
+        public ProductService(AppDbContext dbContext, ICategoryService categoryService, IStockService stockService) : base(dbContext) 
+        { 
+            _categoryService = categoryService;
+            _stockService = stockService;
+        }
 
         public override async Task<ServiceReponse<IEnumerable<Product>>> GetAllAsync()
         {
@@ -14,8 +21,8 @@ namespace Shop.DB.Services
             try
             {
                 var products = await _dbContext.Products
-                    .Include(p => p.Stock)      // Załaduj powiązany Stock
-                    .Include(p => p.Category)   // Załaduj powiązaną kategorię
+                    .Include(p => p.Stock)      
+                    .Include(p => p.Category)  
                     .ToListAsync();
 
                 response.Data = products;
@@ -23,32 +30,83 @@ namespace Shop.DB.Services
             }
             catch (Exception ex)
             {
-                response.Success = false;
-                response.Message = ex.Message;
+                return HandleException<IEnumerable<Product>>(ex);
             }
             return response;
         }
+
+
+        public override async Task<ServiceReponse<Product>> GetByIdAsync(int id)
+        {
+            var response = new ServiceReponse<Product>();
+            try
+            {
+                var product = await _dbContext.Products
+                    .Include(p => p.Stock)     
+                    .Include(p => p.Category)   
+                    .FirstOrDefaultAsync(p => p.Id.Equals(id)); 
+
+                // Jeśli produkt nie został znaleziony
+                if (product == null)
+                {
+                    response.Success = false;
+                    response.Message = "Product not found.";
+                    return response;
+                }
+
+                // Zwróć produkt w odpowiedzi
+                response.Data = product;
+                response.Success = true;
+            }
+            catch (Exception ex)
+            {
+                return HandleException<Product>(ex);
+            }
+            return response;
+        }
+
 
         public override async Task<ServiceReponse<Product>> CreateAsync(Product product)
         {
             var response = new ServiceReponse<Product>();
             try
             {
-                // Walidacja kategorii
-                if (product.CategoryId > 0 &&
-                    !await _dbContext.Categories.AnyAsync(c => c.CategoryId == product.CategoryId))
+                // Walidacja i pobranie kategorii
+                if (product.CategoryId > 0)
                 {
-                    response.Success = false;
-                    response.Message = "Invalid CategoryId.";
-                    return response;
+                    var categoryResponse = await _categoryService.GetByIdAsync(product.CategoryId);
+                    if (!categoryResponse.Success)
+                    {
+                        response.Success = false;
+                        response.Message = "Invalid CategoryId.";
+                        return response;
+                    }
+                    product.Category = categoryResponse.Data;
                 }
 
-                // Tworzenie Stock, jeśli istnieje
+                // Walidacja i pobranie stocku
                 if (product.Stock != null)
                 {
-                    _dbContext.Stocks.Add(product.Stock);
+                    var stockResponse = await _stockService.GetByIdAsync(product.StockId);
+                    if (!stockResponse.Success)
+                    {
+                        // Jeśli StockId nie istnieje, utwórz nowy stock
+                        var newStockResponse = await _stockService.CreateAsync(product.Stock);
+                        if (!newStockResponse.Success)
+                        {
+                            response.Success = false;
+                            response.Message = "Failed to create Stock.";
+                            return response;
+                        }
+                        product.Stock = newStockResponse.Data;
+                    }
+                    else
+                    {
+                        product.Stock = stockResponse.Data;
+                    }
                 }
 
+                // Dodanie produktu
                 _dbSet.Add(product);
                 await _dbContext.SaveChangesAsync();
 
@@ -60,58 +118,9 @@ namespace Shop.DB.Services
             {
                 return HandleException<Product>(ex);
             }
+
             return response;
         }
 
-
-
-        public async Task<ServiceReponse<IEnumerable<Product>>> GetProductsByCategoryIdAsync(int categoryId)
-        {
-            var response = new ServiceReponse<IEnumerable<Product>>();
-            try
-            {
-                var products = await _dbSet
-                    .Where(p => p.CategoryId == categoryId)
-                    .Include(p => p.Stock) // Załaduj relację 1:1
-                    .ToListAsync();
-
-                response.Data = products;
-                response.Success = true;
-            }
-            catch (Exception ex)
-            {
-                response.Success = false;
-                response.Message = ex.Message;
-            }
-            return response;
-        }
-
-        public async Task<ServiceReponse<Product>> GetProductWithStockAsync(int productId)
-        {
-            var response = new ServiceReponse<Product>();
-            try
-            {
-                var product = await _dbSet
-                    .Include(p => p.Stock) // Relacja 1:1
-                    .FirstOrDefaultAsync(p => p.Id == productId);
-
-                if (product == null)
-                {
-                    response.Success = false;
-                    response.Message = "Product not found.";
-                }
-                else
-                {
-                    response.Data = product;
-                    response.Success = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                response.Success = false;
-                response.Message = ex.Message;
-            }
-            return response;
-        }
     }
 }

@@ -4,9 +4,16 @@ using Shared.Services;
 
 namespace Shop.DB.Services
 {
-    public class OrderProductService : CrudService<OrderProduct, int>, IOrderProductService
+    public class OrderProductService : CrudService<OrderProduct, OrderProductKey>, IOrderProductService
     {
-        public OrderProductService(AppDbContext dbContext) : base(dbContext) { }
+        IProductService _productService;
+        IOrderService _orderService;
+
+        public OrderProductService(AppDbContext dbContext, IProductService productService, IOrderService orderService) : base(dbContext)
+        {
+            _productService = productService;
+            _orderService = orderService;
+        }
 
 
         public override async Task<ServiceReponse<IEnumerable<OrderProduct>>> GetAllAsync()
@@ -17,11 +24,11 @@ namespace Shop.DB.Services
                 // Pobranie wszystkich OrderProduct z powiązanymi danymi
                 var orderProducts = await _dbContext.OrderProducts
                     .AsNoTracking()
-                    .Include(op => op.Order)              // Wczytanie powiązanego Order
-                    .Include(op => op.Product)           // Wczytanie powiązanego Product
-                        .ThenInclude(p => p.Stock)       // Wczytanie powiązanego Stock
-                    .Include(op => op.Product)           // Ponowne wczytanie Product
-                        .ThenInclude(p => p.Category)    // Wczytanie powiązanej kategorii
+                    .Include(op => op.Order)
+                    .Include(op => op.Product)
+                        .ThenInclude(p => p.Stock)
+                    .Include(op => op.Product)
+                        .ThenInclude(p => p.Category)
                     .ToListAsync();
 
                 response.Data = orderProducts;
@@ -29,11 +36,47 @@ namespace Shop.DB.Services
             }
             catch (Exception ex)
             {
-                response.Success = false;
-                response.Message = ex.Message;
+                return HandleException<IEnumerable<OrderProduct>>(ex);
             }
             return response;
         }
+
+
+
+        public override async Task<ServiceReponse<OrderProduct>> GetByIdAsync(OrderProductKey id)
+        {
+            var response = new ServiceReponse<OrderProduct>();
+            try
+            {
+                // Pobranie OrderProduct z powiązanymi danymi
+                var orderProduct = await _dbContext.OrderProducts
+                    .AsNoTracking()
+                    .Include(op => op.Order)              // Załadowanie danych związanych z zamówieniem
+                    .Include(op => op.Product)           // Załadowanie danych związanych z produktem
+                        .ThenInclude(p => p.Stock)       // Załadowanie danych związanych ze stanem magazynowym
+                    .Include(op => op.Product)           // Załadowanie danych związanych z kategorią produktu
+                        .ThenInclude(p => p.Category)
+                    .FirstOrDefaultAsync(op => op.OrderId == id.OrderId && op.ProductId == id.ProductId);
+
+                if (orderProduct == null)
+                {
+                    response.Success = false;
+                    response.Message = "OrderProduct not found.";
+                }
+                else
+                {
+                    response.Data = orderProduct;
+                    response.Success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return HandleException<OrderProduct>(ex);
+            }
+            return response;
+        }
+
+
 
 
         public override async Task<ServiceReponse<OrderProduct>> CreateAsync(OrderProduct orderProduct)
@@ -41,25 +84,35 @@ namespace Shop.DB.Services
             var response = new ServiceReponse<OrderProduct>();
             try
             {
-                // Ensure OrderId and ProductId are provided
                 if (orderProduct.OrderId == 0 || orderProduct.ProductId == 0)
                 {
                     throw new Exception("OrderId and ProductId must be provided.");
                 }
 
-                // Check if the Order and Product exist
-                var order = await _dbContext.Orders.FindAsync(orderProduct.OrderId);
-                var product = await _dbContext.Products.FindAsync(orderProduct.ProductId);
+                var orderResponse = await _orderService.GetByIdAsync(orderProduct.OrderId);
+                var productResponse = await _productService.GetByIdAsync(orderProduct.ProductId);
 
-                if (order == null || product == null)
+                if (!orderResponse.Success || orderResponse.Data == null)
                 {
-                    throw new Exception("Order or Product not found.");
+                    throw new Exception($"Order with ID {orderProduct.OrderId} not found.");
                 }
 
-                // Now create the OrderProduct and save to context
-                await _dbContext.OrderProducts.AddAsync(orderProduct);
+                if (!productResponse.Success || productResponse.Data == null)
+                {
+                    throw new Exception($"Product with ID {orderProduct.ProductId} not found.");
+                }
 
-                // Save changes to the database
+
+                var existingOrder = orderResponse.Data;
+                var existingProduct = productResponse.Data;
+
+                _dbContext.Entry(existingOrder).State = EntityState.Unchanged;
+                _dbContext.Entry(existingProduct).State = EntityState.Unchanged;
+
+                orderProduct.Order = existingOrder;
+                orderProduct.Product = existingProduct;
+
+                await _dbContext.OrderProducts.AddAsync(orderProduct);
                 await _dbContext.SaveChangesAsync();
 
                 response.Success = true;
@@ -67,36 +120,41 @@ namespace Shop.DB.Services
             }
             catch (Exception ex)
             {
-                response.Success = false;
-                response.Message = ex.Message;
+                return HandleException<OrderProduct>(ex);
             }
 
             return response;
         }
 
 
-
-
-
-        // Custom method: Get OrderProducts by OrderId
-        public async Task<ServiceReponse<IEnumerable<OrderProduct>>> GetOrderProductsByOrderIdAsync(int orderId)
+        public override async Task<ServiceReponse<bool>> DeleteAsync(OrderProductKey id)
         {
-            var response = new ServiceReponse<IEnumerable<OrderProduct>>();
             try
             {
-                response.Data = await _dbSet
-                    .Where(op => op.OrderId == orderId)
-                    .Include(op => op.Product) // Including related Product entity
-                    .ToListAsync();
+                var entity = await _dbSet.FirstOrDefaultAsync(op => op.OrderId == id.OrderId && op.ProductId == id.ProductId);
+                if (entity == null)
+                {
+                    return new ServiceReponse<bool>
+                    {
+                        Success = false,
+                        Message = "Entity not found.",
+                        Data = false
+                    };
+                }
 
-                response.Success = true;
+                _dbSet.Remove(entity);
+                await _dbContext.SaveChangesAsync();
+                return new ServiceReponse<bool>
+                {
+                    Data = true,
+                    Success = true,
+                    Message = "Entity deleted successfully."
+                };
             }
             catch (Exception ex)
             {
-                response.Success = false;
-                response.Message = ex.Message;
+                return HandleException<bool>(ex);
             }
-            return response;
         }
     }
 }
