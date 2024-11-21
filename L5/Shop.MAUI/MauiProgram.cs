@@ -18,7 +18,43 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+        ConfigureAppServices(builder.Services);
 
-		return builder.Build();
+        return builder.Build();
 	}
+
+
+    private static void ConfigureServices(IServiceCollection services)
+    {
+        ConfigureAppServices(services);
+        ConfigureViewModels(services);
+        ConfigureViews(services);
+    }
+
+    private static void ConfigureAppServices(IServiceCollection services)
+    {
+        services.AddSingleton<IConnectivity>(Connectivity.Current);
+        services.AddSingleton<IGeolocation>(Geolocation.Default);
+        services.AddSingleton<IMap>(Map.Default);
+
+        services.AddSingleton(sp => new HttpClient
+        {
+            BaseAddress = new Uri("https://localhost:7013/api/")
+        });
+
+
+
+    }
+
+    private static void ConfigureViewModels(IServiceCollection services)
+    {
+        // services.AddSingleton<ProductsViewModel>();
+        // services.AddSingleton<ProductDetailsViewModel>();
+
+    }
+
+    private static void ConfigureViews(IServiceCollection services)
+    {
+        services.AddSingleton<MainPage>();
+    }
 }

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Shared.Models;
 using Shared.Services;
-using Shop.DB.DTO;
+using Shared.Models.Dto;
 
 namespace Shop.DB.Controllers
 {

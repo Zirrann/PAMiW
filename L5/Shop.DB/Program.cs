@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Shared.Services;
 using Shop.DB;
-using Shop.DB.DTO;
 using Shop.DB.Services;
 
 var builder = WebApplication.CreateBuilder(args);

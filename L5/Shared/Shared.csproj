@@ -48,6 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Catergory.cs" />
+    <Compile Include="Models\DTO\CategoryDto.cs" />
+    <Compile Include="Models\DTO\OrderDto.cs" />
+    <Compile Include="Models\DTO\OrderProductDto.cs" />
+    <Compile Include="Models\DTO\ProductDto.cs" />
+    <Compile Include="Models\DTO\StockDto.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderProduct.cs" />
     <Compile Include="Models\OrderProductKey.cs" />
