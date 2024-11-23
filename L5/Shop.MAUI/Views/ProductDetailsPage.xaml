@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Shop.MAUI.Views.ProductDetailsPage"
+             Title="ProductDetailsPage">
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Edycja produktu" FontSize="24" HorizontalOptions="Center" />
+
+        <!-- Pole nazwy produktu -->
+        <HorizontalStackLayout>
+            <Label Text="Nazwa:" FontSize="18" />
+            <Entry Text="{Binding Product.Name}" FontSize="18" />
+        </HorizontalStackLayout>
+
+        <!-- Pole ceny produktu -->
+        <HorizontalStackLayout>
+            <Label Text="Cena:" FontSize="18" />
+            <Entry Text="{Binding Product.Price}" Keyboard="Numeric" FontSize="18" />
+        </HorizontalStackLayout>
+
+        <!-- Wybór stanu magazynowego -->
+        <HorizontalStackLayout>
+            <Label Text="Ilość:" FontSize="18" />
+            <Entry Text="{Binding SelectedStockQuantity}" Keyboard="Numeric" FontSize="18" />
+        </HorizontalStackLayout>
+
+
+        <!-- Wybór kategorii -->
+        <HorizontalStackLayout>
+            <Label Text="Kategoria:" FontSize="18" />
+            <Picker Title="{Binding SelectedCategory.Name}" 
+                    ItemsSource="{Binding Categories}" 
+                    SelectedItem="{Binding SelectedCategory}" 
+                    ItemDisplayBinding="{Binding Name}" />
+        </HorizontalStackLayout>
+        
+        <!-- Przycisk zapisu zmian -->
+        <Button Text="Zapisz zmiany" Command="{Binding EditProductCommand}" />
+        <Button Text="Powrót" Command="{Binding GoBackCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -9,6 +9,5 @@ namespace Shared.Services
 {
     public interface IOrderService : ICrudService<Order,int>
     {
-
     }
 }

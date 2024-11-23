@@ -8,12 +8,10 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<Product, ProductDto>().ReverseMap()
-        .ForMember(dest => dest.Stock, opt => opt.MapFrom(src => src.Stock))  // Mapowanie Stock
-        .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category));  // Mapowanie Category
+        CreateMap<Product, ProductDto>().ReverseMap();
         CreateMap<Category, CategoryDto>().ReverseMap();
-        CreateMap<Stock, StockDto>().ReverseMap();
-        CreateMap<Order, OrderDto>().ReverseMap();
+        CreateMap<StockDto, StockDto>().ReverseMap();
+        CreateMap<OrderDto, OrderDto>().ReverseMap();
         CreateMap<OrderProduct, OrderProductDto>().ReverseMap();
     }
 }

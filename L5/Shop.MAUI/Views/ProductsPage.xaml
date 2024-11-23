@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Shop.MAUI.ViewModels"
+             x:Class="Shop.MAUI.Views.ProductsPage">
+
+    
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Lista produktów" FontSize="24" HorizontalOptions="Center" />
+
+        <!-- Lista produktów -->
+        <CollectionView ItemsSource="{Binding Products}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Name}" FontSize="18" Padding="10" />
+                        <Button Text="Wyświetl szczegóły" 
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ProductsViewModel}}, Path=NavigateToProductDetailsCommand}" 
+                        CommandParameter="{Binding}" />
+
+                        <Button Text="Delete" 
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ProductsViewModel}}, Path=DeleteProductCommand}" 
+                        CommandParameter="{Binding}" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Formularz dodawania nowego produktu -->
+        <Entry Placeholder="Product Name" Text="{Binding NewProductName}" />
+        <Entry Placeholder="Product Price" Text="{Binding NewProductPrice}" Keyboard="Numeric" />
+        <Entry Placeholder="Product Stock" Text="{Binding SelectedStockQuantity}" Keyboard="Numeric"/>
+
+        <HorizontalStackLayout>
+            <Label Text="Kategoria:" FontSize="18" />
+            <Picker Title="{Binding SelectedCategory.Name}" 
+                    ItemsSource="{Binding Categories}" 
+                    SelectedItem="{Binding SelectedCategory}" 
+                    ItemDisplayBinding="{Binding Name}" />
+        </HorizontalStackLayout>
+
+        <Button Text="Add Product" Command="{Binding AddProductCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

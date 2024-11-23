@@ -19,11 +19,7 @@ namespace Shop.DB.Controllers
         [HttpGet("{orderId}/{productId}")]
         public virtual async Task<IActionResult> GetById(int orderId, int productId)
         {
-            var id = new OrderProductKey
-            {
-                OrderId = orderId,
-                ProductId = productId
-            };
+            var id = new OrderProductKey(productId, orderId);
 
             var response = await _service.GetByIdAsync(id);
             if (response.Success)
@@ -41,11 +37,8 @@ namespace Shop.DB.Controllers
         [HttpDelete("{orderId}/{productId}")]
         public virtual async Task<IActionResult> Delete(int orderId, int productId)
         {
-            var id = new OrderProductKey
-            {
-                OrderId = orderId,
-                ProductId = productId
-            };
+            var id = new OrderProductKey(productId, orderId);
+
 
             var response = await _service.DeleteAsync(id);
             if (response.Success)

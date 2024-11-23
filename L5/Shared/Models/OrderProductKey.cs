@@ -8,6 +8,12 @@ namespace Shared.Models
 {
     public class OrderProductKey
     {
+        public OrderProductKey(int productId, int orderId)
+        {
+            ProductId = productId;
+            OrderId = orderId;
+        }
+
         public int OrderId { get; set; }
         public int ProductId { get; set; }
 
