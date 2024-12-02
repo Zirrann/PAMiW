@@ -8,3 +8,10 @@ C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem
 C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Domain\Shared\obj\Debug\Shared.csproj.Up2Date
 C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Domain\Shared\obj\Debug\Shared.dll
 C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Domain\Shared\obj\Debug\Shared.pdb
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Shared\bin\Debug\Shared.dll
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Shared\bin\Debug\Shared.pdb
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Shared\obj\Debug\Shared.csproj.AssemblyReference.cache
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Shared\obj\Debug\Shared.csproj.CoreCompileInputs.cache
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Shared\obj\Debug\Shared.csproj.Up2Date
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Shared\obj\Debug\Shared.dll
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Shared\obj\Debug\Shared.pdb

@@ -1,0 +1,50 @@
+﻿<Window x:Class="Shop.WPF.OrderDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Shop.WPF.ViewModels"
+        xmlns:local="clr-namespace:Shop.WPF"
+        mc:Ignorable="d"
+        Title="OrderDetailsWindow" Height="450" Width="800">
+
+    <StackPanel Margin="20">
+
+        <!-- Product Picker -->
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Wybierz produkt:" FontSize="18" VerticalAlignment="Center" Margin="5"/>
+            <ComboBox ItemsSource="{Binding Products}" 
+                      SelectedItem="{Binding SelectedProduct}" 
+                      DisplayMemberPath="Name" 
+                      Width="200" Margin="5"/>
+            <Button Content="Dodaj produkt" Command="{Binding AddProductCommand}" Margin="5"/>
+        </StackPanel>
+
+        <!-- Order Products Label -->
+        <TextBlock Text="Order Products" FontSize="24" HorizontalAlignment="Center" Margin="10"/>
+
+        <!-- Order Products List -->
+        <ListView ItemsSource="{Binding SelectedProducts}" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Product ID" DisplayMemberBinding="{Binding Id}" Width="100"/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="200"/>
+                    <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Price}" Width="100"/>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" 
+                                        Command="{Binding DataContext.DeleteProductCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                        CommandParameter="{Binding}" 
+                                        Background="Red" 
+                                        Foreground="White"/>
+
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </StackPanel>
+</Window>
