@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C1006786-243A-4F7D-9AA7-FC2C71D3A7F8}|Shop.WPF\\Shop.WPF.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.wpf\\viewmodels\\productsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1006786-243A-4F7D-9AA7-FC2C71D3A7F8}|Shop.WPF\\Shop.WPF.csproj|solutionrelative:shop.wpf\\viewmodels\\productsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C1006786-243A-4F7D-9AA7-FC2C71D3A7F8}|Shop.WPF\\Shop.WPF.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.wpf\\shop.wpf.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C1006786-243A-4F7D-9AA7-FC2C71D3A7F8}|Shop.WPF\\Shop.WPF.csproj|solutionrelative:shop.wpf\\shop.wpf.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C1006786-243A-4F7D-9AA7-FC2C71D3A7F8}|Shop.WPF\\Shop.WPF.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.wpf\\viewmodels\\orderdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1006786-243A-4F7D-9AA7-FC2C71D3A7F8}|Shop.WPF\\Shop.WPF.csproj|solutionrelative:shop.wpf\\viewmodels\\orderdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A79EAFC-000F-484A-81F8-E1D7E580C679}|Shop.DB\\Shop.DB.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.db\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2A79EAFC-000F-484A-81F8-E1D7E580C679}|Shop.DB\\Shop.DB.csproj|solutionrelative:shop.db\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C1006786-243A-4F7D-9AA7-FC2C71D3A7F8}|Shop.WPF\\Shop.WPF.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.wpf\\orderdetailswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C1006786-243A-4F7D-9AA7-FC2C71D3A7F8}|Shop.WPF\\Shop.WPF.csproj|solutionrelative:shop.wpf\\orderdetailswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{2A79EAFC-000F-484A-81F8-E1D7E580C679}|Shop.DB\\Shop.DB.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.db\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A79EAFC-000F-484A-81F8-E1D7E580C679}|Shop.DB\\Shop.DB.csproj|solutionrelative:shop.db\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C1006786-243A-4F7D-9AA7-FC2C71D3A7F8}|Shop.WPF\\Shop.WPF.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.wpf\\orderdetailswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1006786-243A-4F7D-9AA7-FC2C71D3A7F8}|Shop.WPF\\Shop.WPF.csproj|solutionrelative:shop.wpf\\orderdetailswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}|Shop.MAUI\\Shop.MAUI.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.maui\\services\\crudservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}|Shop.MAUI\\Shop.MAUI.csproj|solutionrelative:shop.maui\\services\\crudservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{864BD9D6-A3D1-4199-BAA5-A7B2D1D91B8F}|Shared\\Shared.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shared\\models\\dto\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{864BD9D6-A3D1-4199-BAA5-A7B2D1D91B8F}|Shared\\Shared.csproj|solutionrelative:shared\\models\\dto\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}|Shop.MAUI\\Shop.MAUI.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.maui\\viewmodels\\productdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}|Shop.MAUI\\Shop.MAUI.csproj|solutionrelative:shop.maui\\viewmodels\\productdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}|Shop.MAUI\\Shop.MAUI.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.maui\\viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}|Shop.MAUI\\Shop.MAUI.csproj|solutionrelative:shop.maui\\viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A79EAFC-000F-484A-81F8-E1D7E580C679}|Shop.DB\\Shop.DB.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.db\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A79EAFC-000F-484A-81F8-E1D7E580C679}|Shop.DB\\Shop.DB.csproj|solutionrelative:shop.db\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C1006786-243A-4F7D-9AA7-FC2C71D3A7F8}|Shop.WPF\\Shop.WPF.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.wpf\\viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1006786-243A-4F7D-9AA7-FC2C71D3A7F8}|Shop.WPF\\Shop.WPF.csproj|solutionrelative:shop.wpf\\viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A79EAFC-000F-484A-81F8-E1D7E580C679}|Shop.DB\\Shop.DB.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.db\\controllers\\crudcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A79EAFC-000F-484A-81F8-E1D7E580C679}|Shop.DB\\Shop.DB.csproj|solutionrelative:shop.db\\controllers\\crudcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A79EAFC-000F-484A-81F8-E1D7E580C679}|Shop.DB\\Shop.DB.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.db\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A79EAFC-000F-484A-81F8-E1D7E580C679}|Shop.DB\\Shop.DB.csproj|solutionrelative:shop.db\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,92 +51,99 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductsViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.WPF\\ViewModels\\ProductsViewModel.cs",
-              "RelativeDocumentMoniker": "Shop.WPF\\ViewModels\\ProductsViewModel.cs",
-              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.WPF\\ViewModels\\ProductsViewModel.cs",
-              "RelativeToolTip": "Shop.WPF\\ViewModels\\ProductsViewModel.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAAACMAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T19:12:35.863Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderDetailsWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.WPF\\OrderDetailsWindow.xaml",
-              "RelativeDocumentMoniker": "Shop.WPF\\OrderDetailsWindow.xaml",
-              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.WPF\\OrderDetailsWindow.xaml",
-              "RelativeToolTip": "Shop.WPF\\OrderDetailsWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-02T18:56:47.414Z",
+              "Title": "Shop.WPF.csproj",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.WPF\\Shop.WPF.csproj",
+              "RelativeDocumentMoniker": "Shop.WPF\\Shop.WPF.csproj",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.WPF\\Shop.WPF.csproj",
+              "RelativeToolTip": "Shop.WPF\\Shop.WPF.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-03T12:12:39.316Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "OrderDetailsViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.WPF\\ViewModels\\OrderDetailsViewModel.cs",
-              "RelativeDocumentMoniker": "Shop.WPF\\ViewModels\\OrderDetailsViewModel.cs",
-              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.WPF\\ViewModels\\OrderDetailsViewModel.cs",
-              "RelativeToolTip": "Shop.WPF\\ViewModels\\OrderDetailsViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAApwFwAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T18:54:37.616Z",
-              "EditorCaption": ""
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.DB\\appsettings.json",
+              "RelativeDocumentMoniker": "Shop.DB\\appsettings.json",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.DB\\appsettings.json",
+              "RelativeToolTip": "Shop.DB\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-03T12:12:21.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductDto.cs",
-              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shared\\Models\\DTO\\ProductDto.cs",
-              "RelativeDocumentMoniker": "Shared\\Models\\DTO\\ProductDto.cs",
-              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shared\\Models\\DTO\\ProductDto.cs",
-              "RelativeToolTip": "Shared\\Models\\DTO\\ProductDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.DB\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Shop.DB\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.DB\\AppDbContext.cs",
+              "RelativeToolTip": "Shop.DB\\AppDbContext.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T19:01:48.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T12:11:57.512Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "OrderDetailsWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.WPF\\OrderDetailsWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Shop.WPF\\OrderDetailsWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.WPF\\OrderDetailsWindow.xaml.cs",
-              "RelativeToolTip": "Shop.WPF\\OrderDetailsWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "CrudServiceDto.cs",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MAUI\\Services\\CrudServiceDto.cs",
+              "RelativeDocumentMoniker": "Shop.MAUI\\Services\\CrudServiceDto.cs",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MAUI\\Services\\CrudServiceDto.cs",
+              "RelativeToolTip": "Shop.MAUI\\Services\\CrudServiceDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T19:01:57.949Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T12:09:48.736Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OrderViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.WPF\\ViewModels\\OrderViewModel.cs",
-              "RelativeDocumentMoniker": "Shop.WPF\\ViewModels\\OrderViewModel.cs",
-              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.WPF\\ViewModels\\OrderViewModel.cs",
-              "RelativeToolTip": "Shop.WPF\\ViewModels\\OrderViewModel.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAFMAAAANAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "ProductDetailsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MAUI\\ViewModels\\ProductDetailsViewModel.cs",
+              "RelativeDocumentMoniker": "Shop.MAUI\\ViewModels\\ProductDetailsViewModel.cs",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MAUI\\ViewModels\\ProductDetailsViewModel.cs",
+              "RelativeToolTip": "Shop.MAUI\\ViewModels\\ProductDetailsViewModel.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAApwDcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T18:49:43.637Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T11:58:31.133Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "OrderViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MAUI\\ViewModels\\OrderViewModel.cs",
-              "RelativeDocumentMoniker": "Shop.MAUI\\ViewModels\\OrderViewModel.cs",
-              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MAUI\\ViewModels\\OrderViewModel.cs",
-              "RelativeToolTip": "Shop.MAUI\\ViewModels\\OrderViewModel.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAEkAAAA2AAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.DB\\Program.cs",
+              "RelativeDocumentMoniker": "Shop.DB\\Program.cs",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.DB\\Program.cs",
+              "RelativeToolTip": "Shop.DB\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T18:48:28.59Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T11:40:12.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CrudController.cs",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.DB\\Controllers\\CrudController.cs",
+              "RelativeDocumentMoniker": "Shop.DB\\Controllers\\CrudController.cs",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.DB\\Controllers\\CrudController.cs",
+              "RelativeToolTip": "Shop.DB\\Controllers\\CrudController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAEwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:38:58.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.DB\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Shop.DB\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.DB\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Shop.DB\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:38:39.877Z"
             }
           ]
         }

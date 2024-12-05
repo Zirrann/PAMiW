@@ -54,7 +54,7 @@ namespace Shop.WPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Shop.WPF;component/orderdetailswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Shop.WPF;V1.0.0.0;component/orderdetailswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\OrderDetailsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -1,0 +1,56 @@
+﻿@model Shared.Models.Dto.OrderDto
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<h1>Order Details</h1>
+
+<!-- Order Information Table -->
+<div>
+    <h3>Order Information</h3>
+    <table class="table">
+        <tr>
+            <th>Order ID</th>
+            <td>@Model.OrderId</td>
+        </tr>
+        <tr>
+            <th>Customer Name</th>
+            <td>@Model.CustomerName</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Order Products Table -->
+<div>
+    <h3>Order Products</h3>
+    @if (Model.OrderProducts != null && Model.OrderProducts.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>OrderId</th>
+                    <th>ProductId</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var orderProduct in Model.OrderProducts)
+                {
+                    <tr>
+                        <td>@orderProduct.OrderId</td>
+                        <td>@orderProduct.ProductId</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No products in this order.</p>
+    }
+</div>
+
+<!-- Back to Orders Button -->
+<div>
+    <a href="@Url.Action("Index", "Order")" class="btn btn-primary">Back to Orders</a>
+</div>
