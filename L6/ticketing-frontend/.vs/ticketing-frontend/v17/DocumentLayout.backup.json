@@ -62,7 +62,8 @@
               "RelativeToolTip": "src\\components\\TicketItem.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-07T14:44:15.625Z"
+              "WhenOpened": "2024-12-07T14:44:15.625Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -74,7 +75,8 @@
               "RelativeToolTip": "src\\components\\TicketForm.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-07T14:43:47.955Z"
+              "WhenOpened": "2024-12-07T14:43:47.955Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -86,7 +88,8 @@
               "RelativeToolTip": "src\\components\\TicketList.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-07T14:40:17.038Z"
+              "WhenOpened": "2024-12-07T14:40:17.038Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -134,7 +137,8 @@
               "RelativeToolTip": "src\\App.test.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-05T13:25:49.797Z"
+              "WhenOpened": "2024-12-05T13:25:49.797Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -144,7 +148,7 @@
               "RelativeDocumentMoniker": "src\\App.js",
               "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L6\\ticketing-frontend\\src\\App.js",
               "RelativeToolTip": "src\\App.js",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-12-05T13:25:45.304Z",
               "EditorCaption": ""

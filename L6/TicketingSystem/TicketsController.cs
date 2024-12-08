@@ -38,17 +38,40 @@ namespace TicketingSystem.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTicket(int id, Ticket ticket)
         {
-            if (id != ticket.Id) return BadRequest();
+            if (id != ticket.Id)
+            {
+                return BadRequest();
+            }
 
-            var existingTicket = await _context.Tickets.FindAsync(id);
-            if (existingTicket == null) return NotFound();
+            _context.Entry(ticket).State = EntityState.Modified;
 
-            existingTicket.Status = ticket.Status;
-            existingTicket.UpdatedAt = DateTime.Now;
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
 
-            await _hubContext.Clients.All.SendAsync("TicketUpdated", existingTicket);
+                // Wysyłanie informacji o aktualizacji do SignalR
+                await _hubContext.Clients.All.SendAsync("TicketUpdated", ticket);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!TicketExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
             return NoContent();
         }
+
+        private bool TicketExists(int id)
+        {
+            return _context.Tickets.Any(e => e.Id == id);
+        }
+
+
     }
 }
