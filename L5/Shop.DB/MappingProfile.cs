@@ -10,7 +10,6 @@ namespace Shop.DB
         {
             CreateMap<Product, ProductDto>().ReverseMap();
             CreateMap<Category, CategoryDto>().ReverseMap();
-            CreateMap<Stock, StockDto>().ReverseMap();
             CreateMap<Order, OrderDto>().ReverseMap();
             CreateMap<OrderProduct, OrderProductDto>().ReverseMap();
         }

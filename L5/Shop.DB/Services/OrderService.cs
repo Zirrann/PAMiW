@@ -24,7 +24,6 @@ namespace Shop.DB.Services
                     .AsNoTracking()
                     .Include(o => o.OrderProducts)          // Wczytanie powiązanych OrderProducts
                     .ThenInclude(op => op.Product)          // Wczytanie powiązanego produktu
-                        .ThenInclude(p => p.Stock)         // Wczytanie powiązanego Stock
                     .Include(o => o.OrderProducts)          // Wczytanie OrderProducts
                         .ThenInclude(op => op.Product)     // Ponowne wczytanie powiązanego produktu
                             .ThenInclude(p => p.Category) // Wczytanie powiązanej kategorii produktu
@@ -123,7 +122,6 @@ namespace Shop.DB.Services
                     .AsNoTracking()
                     .Include(o => o.OrderProducts)         // Wczytanie powiązań z OrderProducts
                         .ThenInclude(op => op.Product)    // Wczytanie powiązanych produktów
-                            .ThenInclude(p => p.Stock)    // Wczytanie powiązanego Stock
                     .Include(o => o.OrderProducts)        // Ponowne wczytanie OrderProducts
                         .ThenInclude(op => op.Product)    // Wczytanie powiązanych produktów
                             .ThenInclude(p => p.Category) // Wczytanie powiązanej kategorii

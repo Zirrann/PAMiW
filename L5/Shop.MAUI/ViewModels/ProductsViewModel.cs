@@ -18,7 +18,6 @@ namespace Shop.MAUI.ViewModels
     {
         private readonly IProductServiceDto _productService;
         private readonly ICategoryServiceDto _categoryService;
-        private readonly IStockServiceDto _stockService;
         private readonly IMessageDialogService _messageDialogService;
 
         [ObservableProperty]
@@ -42,12 +41,10 @@ namespace Shop.MAUI.ViewModels
         public ProductsViewModel(
             IProductServiceDto productService,
             ICategoryServiceDto categoryService,
-            IStockServiceDto stockService,
             IMessageDialogService messageDialogService)
         {
             _productService = productService;
             _categoryService = categoryService;
-            _stockService = stockService;
             _messageDialogService = messageDialogService;
 
 
@@ -88,27 +85,13 @@ namespace Shop.MAUI.ViewModels
             if (string.IsNullOrWhiteSpace(NewProductName) || NewProductPrice <= 0 || SelectedCategory == null || SelectedStockQuantity <= 0)
                 return;
 
-            var stock = new StockDto
-            {
-                StockId = 0,
-                Quantity = SelectedStockQuantity
-            };
-
-
-            var stockResponse = await _stockService.CreateAsync(stock);
-            if (!stockResponse.Success)
-            {
-                _messageDialogService.ShowMessage(stockResponse.Message);
-                return;
-            }
-
 
             var newProduct = new ProductDto
             {
                 Name = NewProductName,
                 Price = NewProductPrice,
                 CategoryId = SelectedCategory.CategoryId,
-                StockId = stockResponse.Data.StockId
+                Quantity = SelectedStockQuantity
             };
 
             var response = await _productService.CreateAsync(newProduct);
@@ -153,7 +136,6 @@ namespace Shop.MAUI.ViewModels
             var viewModel = new ProductDetailsViewModel(
                                     product,
                                     _categoryService,
-                                    _stockService,
                                     navigation,
                                     _messageDialogService,
                                     _productService);

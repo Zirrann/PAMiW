@@ -11,7 +11,6 @@ namespace Shop.MAUI.ViewModels
     public partial class ProductDetailsViewModel : ObservableObject
     {
         private readonly ICategoryServiceDto _categoryService;
-        private readonly IStockServiceDto _stockService;
         private readonly INavigation _navigation;
         private readonly IMessageDialogService _messageDialogService;
         private readonly IProductServiceDto _productService;
@@ -28,49 +27,39 @@ namespace Shop.MAUI.ViewModels
         [ObservableProperty]
         private int selectedStockQuantity;
 
-        private StockDto selectedStock;
-
-
         public ProductDetailsViewModel(
             ProductDto product,
             ICategoryServiceDto categoryService,
-            IStockServiceDto stockService,
             INavigation navigation,
             IMessageDialogService messageDialogService,
             IProductServiceDto productService)
         {
             _product = product;
             _categoryService = categoryService;
-            _stockService = stockService;
             _navigation = navigation;
             _messageDialogService = messageDialogService;
-            _productService = productService;   
-            
+            _productService = productService;
+
+            // Ustawienie początkowej ilości na podstawie Product.Quantity
+            SelectedStockQuantity = product.Quantity;
+
+            // Ustawienie początkowej kategorii na podstawie Product.CategoryId
             LoadProductDetails();
             LoadCategories();
         }
 
-
         [RelayCommand]
         private async Task EditProductAsync()
         {
-            if (Product == null || SelectedCategory == null || SelectedStockQuantity <=0 )
+            if (Product == null || SelectedCategory == null || SelectedStockQuantity <= 0)
             {
                 _messageDialogService.ShowMessage("Proszę wypełnić wszystkie pola.");
                 return;
             }
 
-            selectedStock.Quantity = SelectedStockQuantity;
-
-            var stockResponse = await _stockService.UpdateAsync(selectedStock.StockId, selectedStock);
-            if (!stockResponse.Success) 
-            {
-                _messageDialogService.ShowMessage(stockResponse.Message);
-                return;
-            } 
-
+            // Aktualizacja właściwości Quantity i CategoryId produktu przed zapisaniem
             Product.CategoryId = SelectedCategory.CategoryId;
-            Product.StockId = selectedStock.StockId;
+            Product.Quantity = SelectedStockQuantity;
 
             var response = await _productService.UpdateAsync(Product.Id, Product);
             if (response.Success)
@@ -91,13 +80,6 @@ namespace Shop.MAUI.ViewModels
             {
                 SelectedCategory = categoryResponse.Data;
             }
-
-            var stockResponse = await _stockService.GetByIdAsync(Product.StockId);
-            if (stockResponse.Success)
-            {
-                selectedStock = stockResponse.Data;
-                SelectedStockQuantity = selectedStock.Quantity;
-            }
         }
 
         private async void LoadCategories()
@@ -106,6 +88,9 @@ namespace Shop.MAUI.ViewModels
             if (response.Success)
             {
                 Categories = new ObservableCollection<CategoryDto>(response.Data);
+
+                // Po załadowaniu kategorii ustawiamy początkową kategorię na podstawie CategoryId
+                LoadProductDetails();
             }
             else
             {

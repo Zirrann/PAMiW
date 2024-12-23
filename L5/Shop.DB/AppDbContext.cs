@@ -8,7 +8,6 @@ namespace Shop.DB
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Product> Products { get; set; }
-        public DbSet<Stock> Stocks { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
@@ -21,13 +20,6 @@ namespace Shop.DB
                 .HasMany(c => c.Products)
                 .WithOne(p => p.Category)
                 .HasForeignKey(p => p.CategoryId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            // Relacja Product -> Stock (1:1)
-            modelBuilder.Entity<Product>()
-                .HasOne(p => p.Stock)
-                .WithOne(s => s.Product)
-                .HasForeignKey<Product>(p => p.StockId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // Relacja Order -> OrderProduct (*:*)

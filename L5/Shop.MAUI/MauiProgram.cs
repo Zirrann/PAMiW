@@ -49,7 +49,6 @@ public static class MauiProgram
         services.AddSingleton<IOrderProductServiceDto, OrderProductServiceDto>();
         services.AddSingleton<IOrderServiceDto, OrderServiceDto>();
         services.AddSingleton<IProductServiceDto, ProductServiceDto>();
-        services.AddSingleton<IStockServiceDto, StockServiceDto>();
 
         services.AddSingleton<IMessageDialogService, MauiMessageDialogService>();
 
