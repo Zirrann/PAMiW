@@ -18,7 +18,6 @@ builder.Services.AddSingleton<ICategoryServiceDto, CategoryServiceDto>();
 builder.Services.AddSingleton<IOrderProductServiceDto, OrderProductServiceDto>();
 builder.Services.AddSingleton<IOrderServiceDto, OrderServiceDto>();
 builder.Services.AddSingleton<IProductServiceDto, ProductServiceDto>();
-builder.Services.AddSingleton<IStockServiceDto, StockServiceDto>();
 
 var app = builder.Build();
 

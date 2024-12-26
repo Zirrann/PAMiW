@@ -2,39 +2,56 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Shop.MAUI.Views.ProductDetailsPage"
-             Title="ProductDetailsPage">
+             Title="Szczegóły produktu">
 
-    <VerticalStackLayout Padding="20" Spacing="10">
-        <Label Text="Edycja produktu" FontSize="24" HorizontalOptions="Center" />
+    <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="White">
+        <!-- Page Title -->
+        <Label Text="Edycja produktu" FontSize="24" HorizontalOptions="Center" FontAttributes="Bold" />
 
-        <HorizontalStackLayout>
-            <Label Text="Nazwa:" FontSize="18" />
-            <Entry Text="{Binding Product.Name}" FontSize="18" />
+        <!-- Product Name -->
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="Nazwa:" FontSize="18" VerticalOptions="Center" />
+            <Entry Text="{Binding Product.Name}" FontSize="18" HorizontalOptions="FillAndExpand" />
         </HorizontalStackLayout>
 
-        <HorizontalStackLayout>
-            <Label Text="Cena:" FontSize="18" />
-            <Entry Text="{Binding Product.Price}" Keyboard="Numeric" FontSize="18" />
+        <!-- Product Price -->
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="Cena:" FontSize="18" VerticalOptions="Center" />
+            <Entry Text="{Binding Product.Price}" Keyboard="Numeric" FontSize="18" HorizontalOptions="FillAndExpand" />
         </HorizontalStackLayout>
 
-        <HorizontalStackLayout>
-            <Label Text="Ilość:" FontSize="18" />
-            <Entry Text="{Binding SelectedStockQuantity}" Keyboard="Numeric" FontSize="18" />
+        <!-- Product Quantity -->
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="Ilość:" FontSize="18" VerticalOptions="Center" />
+            <Entry Text="{Binding SelectedStockQuantity}" Keyboard="Numeric" FontSize="18" HorizontalOptions="FillAndExpand" />
         </HorizontalStackLayout>
 
-
-        <!-- Wybór kategorii -->
-        <HorizontalStackLayout>
-            <Label Text="Kategoria:" FontSize="18" />
+        <!-- Product Category -->
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="Kategoria:" FontSize="18" VerticalOptions="Center" />
             <Picker Title="{Binding SelectedCategory.Name}" 
-            ItemsSource="{Binding Categories}" 
-            SelectedItem="{Binding SelectedCategory}" 
-            ItemDisplayBinding="{Binding Name}" />
+                    ItemsSource="{Binding Categories}" 
+                    SelectedItem="{Binding SelectedCategory}" 
+                    ItemDisplayBinding="{Binding Name}" 
+                    FontSize="18" HorizontalOptions="FillAndExpand" />
         </HorizontalStackLayout>
 
-
-        <!-- Przycisk zapisu zmian -->
-        <Button Text="Zapisz zmiany" Command="{Binding EditProductCommand}" />
-        <Button Text="Powrót" Command="{Binding GoBackCommand}" />
+        <!-- Action Buttons -->
+        <VerticalStackLayout Spacing="10" Margin="0,20,0,0">
+            <Button Text="Zapisz zmiany" 
+                    Command="{Binding EditProductCommand}" 
+                    FontSize="18" 
+                    BackgroundColor="Green" 
+                    TextColor="White" 
+                    CornerRadius="10" 
+                    Padding="10" />
+            <Button Text="Powrót" 
+                    Command="{Binding GoBackCommand}" 
+                    FontSize="18" 
+                    BackgroundColor="Gray" 
+                    TextColor="White" 
+                    CornerRadius="10" 
+                    Padding="10" />
+        </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

@@ -8,23 +8,23 @@
         mc:Ignorable="d"
         Title="OrderDetailsWindow" Height="450" Width="800">
 
-    <StackPanel Margin="20">
+    <StackPanel Margin="20" VerticalAlignment="Top">
 
         <!-- Product Picker -->
-        <StackPanel Orientation="Horizontal" Margin="10">
-            <TextBlock Text="Wybierz produkt:" FontSize="18" VerticalAlignment="Center" Margin="5"/>
+        <StackPanel Orientation="Horizontal" Margin="10" Width="480">
+            <TextBlock Text="Dodaj produkt:" FontSize="18" VerticalAlignment="Center" Margin="5"/>
             <ComboBox ItemsSource="{Binding Products}" 
                       SelectedItem="{Binding SelectedProduct}" 
                       DisplayMemberPath="Name" 
                       Width="200" Margin="5"/>
-            <Button Content="Dodaj produkt" Command="{Binding AddProductCommand}" Margin="5"/>
+            <Button Content="Dodaj produkt" Command="{Binding AddProductCommand}" Margin="5" VerticalAlignment="Center"/>
         </StackPanel>
 
         <!-- Order Products Label -->
-        <TextBlock Text="Order Products" FontSize="24" HorizontalAlignment="Center" Margin="10"/>
+        <TextBlock Text="Produkty w zamówieniu" FontSize="24" HorizontalAlignment="Center" Margin="10" RenderTransformOrigin="0.476,1.475" Height="53"/>
 
         <!-- Order Products List -->
-        <ListView ItemsSource="{Binding SelectedProducts}" Margin="10">
+        <ListView ItemsSource="{Binding SelectedProducts}" Margin="10" Width="508">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Product ID" DisplayMemberBinding="{Binding Id}" Width="100"/>
@@ -38,7 +38,6 @@
                                         CommandParameter="{Binding}" 
                                         Background="Red" 
                                         Foreground="White"/>
-
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

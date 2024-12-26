@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Shared.Models;
 using Shared.Models.Dto;
 using Shop.MAUI.Services.ServicesDto;
+using Shop.MVC.Models;
 
 namespace Shop.Web.Controllers
 {
@@ -10,16 +11,15 @@ namespace Shop.Web.Controllers
     {
         private readonly IProductServiceDto _productServiceDto;
         private readonly ICategoryServiceDto _categoryServiceDto;
-        private readonly IStockServiceDto _stockServiceDto;
+        private IEnumerable<CategoryDto> categories;
+
 
         public ProductController(
             IProductServiceDto productServiceDto,
-            ICategoryServiceDto categoryServiceDto,
-            IStockServiceDto stockServiceDto)
+            ICategoryServiceDto categoryServiceDto)
         {
             _productServiceDto = productServiceDto;
             _categoryServiceDto = categoryServiceDto;
-            _stockServiceDto = stockServiceDto;
         }
 
         public async Task<IActionResult> Index()
@@ -31,11 +31,12 @@ namespace Shop.Web.Controllers
             {
                 if (categoriesResponse.Success)
                 {
-                    ViewBag.Categories = categoriesResponse.Data;  // Przekazanie listy kategorii do widoku
+                    categories = categoriesResponse.Data;
+                    ViewBag.Categories = categories;  
                 }
                 else
                 {
-                    ViewBag.Categories = null;  // W przypadku błędu pobierania kategorii
+                    ViewBag.Categories = null;  
                 }
 
                 return View(response.Data);
@@ -48,13 +49,20 @@ namespace Shop.Web.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var response = await _productServiceDto.GetByIdAsync(id);
-            if (response.Success)
+            var productResponse = await _productServiceDto.GetByIdAsync(id);
+            var categoriesResponse = await _categoryServiceDto.GetAllAsync();
+
+            if (productResponse.Success && categoriesResponse.Success)
             {
-                return View(response.Data);
+                var model = new ProductDetailsModel
+                {
+                    Product = productResponse.Data,
+                    Categories = categoriesResponse.Data
+                };
+                return View(model);
             }
 
-            ViewBag.Error = "Product not found.";
+            ViewBag.Error = "Product or categories not found.";
             return RedirectToAction(nameof(Index));
         }
 
@@ -72,25 +80,12 @@ namespace Shop.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(ProductDto product, int quantity) // Dodajemy quantity jako argument
+        public async Task<IActionResult> Add(ProductDto product, int quantity)
         {
             if (ModelState.IsValid)
             {
-                // Tworzymy nowy StockDto na podstawie quantity
-                var newStock = new StockDto
-                {
-                    Quantity = quantity // Używamy quantity przekazanego z formularza
-                };
+                    product.Quantity = quantity;
 
-                // Tworzymy nowy Stock w bazie
-                var stockResponse = await _stockServiceDto.CreateAsync(newStock);
-
-                if (stockResponse.Success)
-                {
-                    // Przypisujemy StockId do produktu
-                    product.StockId = stockResponse.Data.StockId;
-
-                    // Tworzymy produkt z nowym StockId
                     var productResponse = await _productServiceDto.CreateAsync(product);
 
                     if (productResponse.Success)
@@ -99,15 +94,43 @@ namespace Shop.Web.Controllers
                     }
 
                     ViewBag.Error = productResponse.Message;
-                }
-                else
-                {
-                    ViewBag.Error = "Failed to create stock.";
-                }
+                
             }
 
-            // W przypadku niepowodzenia w dodaniu produktu lub stanu magazynowego, zwróćmy listę produktów
             return View("Index", await _productServiceDto.GetAllAsync());
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(ProductDto product)
+        {
+            if (ModelState.IsValid)
+            {
+                // Aktualizacja produktu w bazie danych
+                var response = await _productServiceDto.UpdateAsync(product.Id, product);
+
+                if (response.Success)
+                {
+                    return RedirectToAction(nameof(Index));  // Po udanej aktualizacji przekierowujesz na stronę z listą produktów
+                }
+
+                ViewBag.Error = response.Message;  // Jeśli aktualizacja nie powiedzie się, wyświetl błąd
+            }
+
+            // Jeśli formularz nie jest poprawny, ponownie ładujemy kategorie
+            var categoriesResponse = await _categoryServiceDto.GetAllAsync();
+            ViewBag.Categories = categoriesResponse.Success ? categoriesResponse.Data : new List<CategoryDto>();
+
+            // Tworzymy model z aktualnymi danymi i kategoriami
+            var model = new ProductDetailsModel
+            {
+                Product = product,
+                Categories = ViewBag.Categories as List<CategoryDto>
+            };
+
+            return View("Details", model);  // Zwracamy widok "Details" z modelami
+        }
+
+
     }
 }

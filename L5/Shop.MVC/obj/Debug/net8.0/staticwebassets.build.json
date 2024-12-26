@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "h/tSd1xaUm8M7cclt/UAqHMAY7ODHzbLV5uVsub+0Mc=",
+  "Hash": "st4Bqj0fpfmDV/7Y4GhH4mNVvD3+bwJmGn6yXtuQnHY=",
   "Source": "Shop.MVC",
   "BasePath": "_content/Shop.MVC",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MVC\\wwwroot\\css\\style.css",
+      "SourceId": "Shop.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MVC\\wwwroot\\",
+      "BasePath": "_content/Shop.MVC",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
       "Identity": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MVC\\wwwroot\\favicon.ico",

@@ -31,5 +31,5 @@ C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem
 C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Shop.WPF\obj\Debug\net8.0-windows\ProductDetailsWindow.g.cs
 C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Shop.WPF\obj\Debug\net8.0-windows\ProductDetailsWindow.baml
 C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Shop.WPF\obj\Debug\net8.0-windows\OrderDetailsWindow.g.cs
-C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Shop.WPF\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Shop.WPF\obj\Debug\net8.0-windows\OrderDetailsWindow.baml
+C:\Users\Ja\OneDrive - Politechnika Warszawska\Pulpit\Nowy folder (2)\Studia\Sem 5\PAMW PAUM\PAMiW\L5\Shop.WPF\bin\Debug\net8.0-windows\Newtonsoft.Json.dll

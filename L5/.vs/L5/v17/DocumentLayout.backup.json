@@ -3,22 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}|Shop.MAUI\\Shop.MAUI.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.maui\\viewmodels\\productdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}|Shop.MAUI\\Shop.MAUI.csproj|solutionrelative:shop.maui\\viewmodels\\productdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D8268964-AB47-405C-A698-7E54DC621ECA}|SHOP.BLZR\\SHOP.BLZR.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.blzr\\pages\\orderdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D8268964-AB47-405C-A698-7E54DC621ECA}|SHOP.BLZR\\SHOP.BLZR.csproj|solutionrelative:shop.blzr\\pages\\orderdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}|Shop.MAUI\\Shop.MAUI.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.maui\\views\\productdetailspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}|Shop.MAUI\\Shop.MAUI.csproj|solutionrelative:shop.maui\\views\\productdetailspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}|Shop.MAUI\\Shop.MAUI.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.maui\\viewmodels\\orderdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F24BA18-1C75-4E65-9D1E-37C8A31DBFD4}|Shop.MAUI\\Shop.MAUI.csproj|solutionrelative:shop.maui\\viewmodels\\orderdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedHeight": 200,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductDetailsViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MAUI\\ViewModels\\ProductDetailsViewModel.cs",
-              "RelativeDocumentMoniker": "Shop.MAUI\\ViewModels\\ProductDetailsViewModel.cs",
-              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MAUI\\ViewModels\\ProductDetailsViewModel.cs",
-              "RelativeToolTip": "Shop.MAUI\\ViewModels\\ProductDetailsViewModel.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAApwE8AAAANAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "OrderDetailsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MAUI\\ViewModels\\OrderDetailsViewModel.cs",
+              "RelativeDocumentMoniker": "Shop.MAUI\\ViewModels\\OrderDetailsViewModel.cs",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MAUI\\ViewModels\\OrderDetailsViewModel.cs",
+              "RelativeToolTip": "Shop.MAUI\\ViewModels\\OrderDetailsViewModel.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIUAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T13:35:13.759Z",
+              "WhenOpened": "2024-12-26T19:02:55.657Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductDetailsPage.xaml",
-              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MAUI\\Views\\ProductDetailsPage.xaml",
-              "RelativeDocumentMoniker": "Shop.MAUI\\Views\\ProductDetailsPage.xaml",
-              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.MAUI\\Views\\ProductDetailsPage.xaml",
-              "RelativeToolTip": "Shop.MAUI\\Views\\ProductDetailsPage.xaml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-23T13:34:23.379Z",
+              "DocumentIndex": 0,
+              "Title": "OrderDetails.razor",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\SHOP.BLZR\\Pages\\OrderDetails.razor",
+              "RelativeDocumentMoniker": "SHOP.BLZR\\Pages\\OrderDetails.razor",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\SHOP.BLZR\\Pages\\OrderDetails.razor",
+              "RelativeToolTip": "SHOP.BLZR\\Pages\\OrderDetails.razor",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAAAHAAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-26T18:54:13.299Z",
               "EditorCaption": ""
             }
           ]

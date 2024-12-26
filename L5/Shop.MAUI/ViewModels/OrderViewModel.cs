@@ -72,6 +72,7 @@ namespace Shop.MAUI.ViewModels
             var navigationParameters = new Dictionary<string, object>
             {
                 { "OrderProducts", order.OrderProducts },
+                { "OrderId", order.OrderId }
             };
 
             await Shell.Current.GoToAsync(nameof(OrderDetailsPage), false, navigationParameters);

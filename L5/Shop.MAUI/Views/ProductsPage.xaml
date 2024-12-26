@@ -3,42 +3,59 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Shop.MAUI.ViewModels"
              x:Class="Shop.MAUI.Views.ProductsPage">
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <!-- Page Title -->
+        <Label Text="Lista produktów" FontSize="24" HorizontalOptions="Center" FontAttributes="Bold" />
 
-    
-    <VerticalStackLayout Padding="20" Spacing="10">
-        <Label Text="Lista produktów" FontSize="24" HorizontalOptions="Center" />
-
-        <!-- Lista produktów -->
-        <CollectionView ItemsSource="{Binding Products}">
+        <!-- Products List -->
+        <CollectionView ItemsSource="{Binding Products}" Margin="0,10,0,10">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding Name}" FontSize="18" Padding="10" />
-                        <Button Text="Wyświetl szczegóły" 
-                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ProductsViewModel}}, Path=NavigateToProductDetailsCommand}" 
-                        CommandParameter="{Binding}" />
+                    <Frame BorderColor="LightGray" CornerRadius="10" Padding="10" Margin="5" BackgroundColor="White" HasShadow="True">
+                        <Grid ColumnDefinitions="*,Auto,Auto" RowDefinitions="Auto" VerticalOptions="Center">
+                            <!-- Product Name -->
+                            <Label Text="{Binding Name}" FontSize="18" VerticalOptions="Center" Grid.Column="0" Margin="0,0,10,0" />
 
-                        <Button Text="Delete" 
-                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ProductsViewModel}}, Path=DeleteProductCommand}" 
-                        CommandParameter="{Binding}" />
-                    </StackLayout>
+                            <!-- Details Button -->
+                            <Button Text="Wyświetl szczegóły" 
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ProductsViewModel}}, Path=NavigateToProductDetailsCommand}" 
+                            CommandParameter="{Binding}" 
+                            FontSize="14" 
+                            Padding="10,5" 
+                            Grid.Column="1" />
+
+                            <!-- Delete Button -->
+                            <Button Text="Delete" 
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ProductsViewModel}}, Path=DeleteProductCommand}" 
+                            CommandParameter="{Binding}" 
+                            BackgroundColor="Red" 
+                            TextColor="White" 
+                            FontSize="14" 
+                            Padding="10,5" 
+                            Grid.Column="2" />
+                        </Grid>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <!-- Formularz dodawania nowego produktu -->
-        <Entry Placeholder="Product Name" Text="{Binding NewProductName}" />
-        <Entry Placeholder="Product Price" Text="{Binding NewProductPrice}" Keyboard="Numeric" />
-        <Entry Placeholder="Product Stock" Text="{Binding SelectedStockQuantity}" Keyboard="Numeric"/>
 
-        <HorizontalStackLayout>
-            <Label Text="Kategoria:" FontSize="18" />
+
+        <!-- New Product Form -->
+        <Label Text="Dodaj nowy produkt" FontSize="20" FontAttributes="Bold" Margin="0,10,0,5" />
+        <Entry Placeholder="Product Name" Text="{Binding NewProductName}" FontSize="16" />
+        <Entry Placeholder="Product Price" Text="{Binding NewProductPrice}" Keyboard="Numeric" FontSize="16" />
+        <Entry Placeholder="Product Stock" Text="{Binding SelectedStockQuantity}" Keyboard="Numeric" FontSize="16" />
+
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="Kategoria:" FontSize="18" VerticalOptions="Center" />
             <Picker Title="{Binding SelectedCategory.Name}" 
                     ItemsSource="{Binding Categories}" 
                     SelectedItem="{Binding SelectedCategory}" 
-                    ItemDisplayBinding="{Binding Name}" />
+                    ItemDisplayBinding="{Binding Name}" 
+                    FontSize="16" />
         </HorizontalStackLayout>
 
-        <Button Text="Add Product" Command="{Binding AddProductCommand}" />
+        <Button Text="Add Product" Command="{Binding AddProductCommand}" FontSize="16" BackgroundColor="Green" TextColor="White" Padding="10" />
     </VerticalStackLayout>
 </ContentPage>

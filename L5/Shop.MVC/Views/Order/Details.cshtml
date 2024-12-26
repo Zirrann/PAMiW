@@ -1,4 +1,4 @@
-﻿@model Shared.Models.Dto.OrderDto
+﻿@model OrderDetailsModel
 
 @{
     ViewData["Title"] = "Order Details";
@@ -6,39 +6,67 @@
 
 <h1>Order Details</h1>
 
-<!-- Order Information Table -->
+<!-- Order Information -->
 <div>
     <h3>Order Information</h3>
     <table class="table">
         <tr>
             <th>Order ID</th>
-            <td>@Model.OrderId</td>
+            <td>@Model.Order.OrderId</td>
         </tr>
         <tr>
             <th>Customer Name</th>
-            <td>@Model.CustomerName</td>
+            <td>@Model.Order.CustomerName</td>
         </tr>
     </table>
 </div>
 
-<!-- Order Products Table -->
+<!-- Add Product Section -->
 <div>
-    <h3>Order Products</h3>
-    @if (Model.OrderProducts != null && Model.OrderProducts.Any())
+    <h3>Add Product to Order</h3>
+    <form method="post" asp-action="AddProduct">
+        <input type="hidden" name="orderId" value="@Model.Order.OrderId" />
+        <div class="form-group">
+            <label for="productSelect">Available Products</label>
+            <select id="productSelect" name="productId" class="form-control">
+                @foreach (var product in Model.AvailableProducts)
+                {
+                    <option value="@product.Id">@product.Name (@product.Price)</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Add Product</button>
+    </form>
+</div>
+
+<!-- Order Products -->
+<div>
+    <h3>Products in Order</h3>
+    @if (Model.SelectedProducts.Any())
     {
         <table class="table">
             <thead>
                 <tr>
-                    <th>OrderId</th>
-                    <th>ProductId</th>
+                    <th>Product ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var orderProduct in Model.OrderProducts)
+                @foreach (var product in Model.SelectedProducts)
                 {
                     <tr>
-                        <td>@orderProduct.OrderId</td>
-                        <td>@orderProduct.ProductId</td>
+                        <td>@product.Id</td>
+                        <td>@product.Name</td>
+                        <td>@product.Price</td>
+                        <td>
+                            <form method="post" asp-action="RemoveProduct">
+                                <input type="hidden" name="orderId" value="@Model.Order.OrderId" />
+                                <input type="hidden" name="productId" value="@product.Id" />
+                                <button type="submit" class="btn btn-danger">Remove</button>
+                            </form>
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -50,7 +78,7 @@
     }
 </div>
 
-<!-- Back to Orders Button -->
+<!-- Back to Orders -->
 <div>
     <a href="@Url.Action("Index", "Order")" class="btn btn-primary">Back to Orders</a>
 </div>

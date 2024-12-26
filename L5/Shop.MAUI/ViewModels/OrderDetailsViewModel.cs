@@ -19,6 +19,8 @@ namespace Shop.MAUI.ViewModels
         private readonly IOrderProductServiceDto _orderProductServiceDto;
         private readonly IMessageDialogService _messageDialogService;
         private readonly IProductServiceDto _productService;
+        private readonly IOrderServiceDto _orderService;
+        private int orderId;
 
         [ObservableProperty]
         private ObservableCollection<OrderProductDto> orderProducts;
@@ -36,14 +38,16 @@ namespace Shop.MAUI.ViewModels
         public OrderDetailsViewModel(
             IOrderProductServiceDto orderProductServiceDto,
             IMessageDialogService messageDialogService,
-            IProductServiceDto productServiceDto)
+            IProductServiceDto productServiceDto,
+            IOrderServiceDto orderService)
         {
             _orderProductServiceDto = orderProductServiceDto;
             _messageDialogService = messageDialogService;
             _productService = productServiceDto;
-
+            _orderService = orderService;
 
             LoadProductsToAddList();
+
         }
 
         [RelayCommand]
@@ -51,11 +55,16 @@ namespace Shop.MAUI.ViewModels
         {
             if (SelectedProduct is null || SelectedProduct.Id <= 0)
                 return;
+
+
+
             var pOrder = new OrderProductDto
             {
                 ProductId = SelectedProduct.Id,
-                OrderId = OrderProducts.First().OrderId
+                OrderId = orderId
             };
+            
+
             var response = await _orderProductServiceDto.CreateAsync(pOrder);
             if (response.Success)
             {
@@ -95,11 +104,17 @@ namespace Shop.MAUI.ViewModels
         private async void LoadProductsToAddList()
         {
             var response = await _productService.GetAllAsync();
+
+            if (OrderProducts is null)
+            {
+                await LoadOrderProducts();
+            }
+
             if (response.Success)
             {
                 Products = new ObservableCollection<ProductDto>(response.Data);
 
-                var orderProductIds = new HashSet<int>(orderProducts.Select(orderP => orderP.ProductId));
+                var orderProductIds = new HashSet<int>(OrderProducts.Select(orderP => orderP.ProductId));
                 var productsToRemove = Products.Where(p => orderProductIds.Contains(p.Id)).ToList();
                 foreach (var product in productsToRemove)
                 {
@@ -117,6 +132,11 @@ namespace Shop.MAUI.ViewModels
         private async void LoadProductsToDisplay()
         {
             SlectedProducts = new ObservableCollection<ProductDto>();
+
+            if (OrderProducts is null) 
+            {
+                await LoadOrderProducts();
+            }
 
             foreach (var orderProduct in OrderProducts) 
             {
@@ -151,12 +171,16 @@ namespace Shop.MAUI.ViewModels
 
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
-            var orderProductsList = query["OrderProducts"] as List<OrderProductDto>;
+            orderId = Convert.ToInt32(query["OrderId"]);
+        }
+
+        private async Task LoadOrderProducts() 
+        {
+            var response = await _orderService.GetByIdAsync(orderId);
+            var order = response.Data;
+            OrderProducts = new ObservableCollection<OrderProductDto>(order.OrderProducts);
+
             OnPropertyChanged("OrderProducts");
-            if (orderProductsList != null)
-            {
-                OrderProducts = new ObservableCollection<OrderProductDto>(orderProductsList);
-            }
         }
     }
 }

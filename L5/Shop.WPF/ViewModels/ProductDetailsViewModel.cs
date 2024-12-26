@@ -11,7 +11,6 @@ namespace Shop.WPF.ViewModels
     public partial class ProductDetailsViewModel : ObservableObject
     {
         private readonly ICategoryServiceDto _categoryService;
-        private readonly IStockServiceDto _stockService;
         private readonly IMessageDialogService _messageDialogService;
         private readonly IProductServiceDto _productService;
 
@@ -27,18 +26,15 @@ namespace Shop.WPF.ViewModels
         [ObservableProperty]
         private int selectedStockQuantity;
 
-        private StockDto selectedStock;
 
         public ProductDetailsViewModel(
             ProductDto product,
             ICategoryServiceDto categoryService,
-            IStockServiceDto stockService,
             IMessageDialogService messageDialogService,
             IProductServiceDto productService)
         {
             _product = product;
             _categoryService = categoryService;
-            _stockService = stockService;
             _messageDialogService = messageDialogService;
             _productService = productService;
 
@@ -55,17 +51,10 @@ namespace Shop.WPF.ViewModels
                 return;
             }
 
-            selectedStock.Quantity = SelectedStockQuantity;
-
-            var stockResponse = await _stockService.UpdateAsync(selectedStock.StockId, selectedStock);
-            if (!stockResponse.Success)
-            {
-                _messageDialogService.ShowMessage(stockResponse.Message);
-                return;
-            }
-
+            // Aktualizacja właściwości Quantity i CategoryId produktu przed zapisaniem
             Product.CategoryId = SelectedCategory.CategoryId;
-            Product.StockId = selectedStock.StockId;
+            Product.Quantity = SelectedStockQuantity;
+
 
             var response = await _productService.UpdateAsync(Product.Id, Product);
             if (response.Success)
@@ -86,13 +75,6 @@ namespace Shop.WPF.ViewModels
             if (categoryResponse.Success)
             {
                 SelectedCategory = categoryResponse.Data;
-            }
-
-            var stockResponse = await _stockService.GetByIdAsync(Product.StockId);
-            if (stockResponse.Success)
-            {
-                selectedStock = stockResponse.Data;
-                SelectedStockQuantity = selectedStock.Quantity;
             }
         }
 

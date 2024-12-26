@@ -22,6 +22,8 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
 
+
+
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
@@ -54,7 +56,9 @@ public static class MauiProgram
 
         services.AddSingleton(sp => new HttpClient
         {
-            BaseAddress = new Uri("http://localhost:5104/")
+            //BaseAddress = new Uri("http://localhost:5104/")
+            // For Android
+            BaseAddress = new Uri("http://10.0.2.2:5104/")
         });
     }
 
