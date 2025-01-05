@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.Tests\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AA197586-267A-4F9B-87A0-A5145E9A6654}|Shop.Tests\\Shop.Tests.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.tests\\shop.tests\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA197586-267A-4F9B-87A0-A5145E9A6654}|Shop.Tests\\Shop.Tests.csproj|solutionrelative:shop.tests\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA197586-267A-4F9B-87A0-A5145E9A6654}|Shop.Tests\\Shop.Tests.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.tests\\shop.tests\\stepdefinitions\\ordermanagementstepdefinitions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA197586-267A-4F9B-87A0-A5145E9A6654}|Shop.Tests\\Shop.Tests.csproj|solutionrelative:shop.tests\\stepdefinitions\\ordermanagementstepdefinitions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA197586-267A-4F9B-87A0-A5145E9A6654}|Shop.Tests\\Shop.Tests.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.tests\\shop.tests\\services\\fakeproductservicedto .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA197586-267A-4F9B-87A0-A5145E9A6654}|Shop.Tests\\Shop.Tests.csproj|solutionrelative:shop.tests\\services\\fakeproductservicedto .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA197586-267A-4F9B-87A0-A5145E9A6654}|Shop.Tests\\Shop.Tests.csproj|c:\\users\\ja\\onedrive - politechnika warszawska\\pulpit\\nowy folder (2)\\studia\\sem 5\\pamw paum\\pamiw\\l5\\shop.tests\\shop.tests\\services\\fakeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA197586-267A-4F9B-87A0-A5145E9A6654}|Shop.Tests\\Shop.Tests.csproj|solutionrelative:shop.tests\\services\\fakeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.Tests\\Shop.Tests\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Shop.Tests\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.Tests\\Shop.Tests\\AppDbContext.cs",
+              "RelativeToolTip": "Shop.Tests\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T20:14:46.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FakeProductServiceDto .cs",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.Tests\\Shop.Tests\\services\\FakeProductServiceDto .cs",
+              "RelativeDocumentMoniker": "Shop.Tests\\services\\FakeProductServiceDto .cs",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.Tests\\Shop.Tests\\services\\FakeProductServiceDto .cs",
+              "RelativeToolTip": "Shop.Tests\\services\\FakeProductServiceDto .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAByAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T19:23:26.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FakeService.cs",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.Tests\\Shop.Tests\\services\\FakeService.cs",
+              "RelativeDocumentMoniker": "Shop.Tests\\services\\FakeService.cs",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.Tests\\Shop.Tests\\services\\FakeService.cs",
+              "RelativeToolTip": "Shop.Tests\\services\\FakeService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAABBwA4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T19:16:36.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderManagementStepDefinitions.cs",
+              "DocumentMoniker": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.Tests\\Shop.Tests\\StepDefinitions\\OrderManagementStepDefinitions.cs",
+              "RelativeDocumentMoniker": "Shop.Tests\\StepDefinitions\\OrderManagementStepDefinitions.cs",
+              "ToolTip": "C:\\Users\\Ja\\OneDrive - Politechnika Warszawska\\Pulpit\\Nowy folder (2)\\Studia\\Sem 5\\PAMW PAUM\\PAMiW\\L5\\Shop.Tests\\Shop.Tests\\StepDefinitions\\OrderManagementStepDefinitions.cs",
+              "RelativeToolTip": "Shop.Tests\\StepDefinitions\\OrderManagementStepDefinitions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T19:23:22.972Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
