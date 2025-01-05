@@ -1,0 +1,84 @@
+﻿@model OrderDetailsModel
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<h1>Order Details</h1>
+
+<!-- Order Information -->
+<div>
+    <h3>Order Information</h3>
+    <table class="table">
+        <tr>
+            <th>Order ID</th>
+            <td>@Model.Order.OrderId</td>
+        </tr>
+        <tr>
+            <th>Customer Name</th>
+            <td>@Model.Order.CustomerName</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Add Product Section -->
+<div>
+    <h3>Add Product to Order</h3>
+    <form method="post" asp-action="AddProduct">
+        <input type="hidden" name="orderId" value="@Model.Order.OrderId" />
+        <div class="form-group">
+            <label for="productSelect">Available Products</label>
+            <select id="productSelect" name="productId" class="form-control">
+                @foreach (var product in Model.AvailableProducts)
+                {
+                    <option value="@product.Id">@product.Name (@product.Price)</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Add Product</button>
+    </form>
+</div>
+
+<!-- Order Products -->
+<div>
+    <h3>Products in Order</h3>
+    @if (Model.SelectedProducts.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model.SelectedProducts)
+                {
+                    <tr>
+                        <td>@product.Id</td>
+                        <td>@product.Name</td>
+                        <td>@product.Price</td>
+                        <td>
+                            <form method="post" asp-action="RemoveProduct">
+                                <input type="hidden" name="orderId" value="@Model.Order.OrderId" />
+                                <input type="hidden" name="productId" value="@product.Id" />
+                                <button type="submit" class="btn btn-danger">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No products in this order.</p>
+    }
+</div>
+
+<!-- Back to Orders -->
+<div>
+    <a href="@Url.Action("Index", "Order")" class="btn btn-primary">Back to Orders</a>
+</div>

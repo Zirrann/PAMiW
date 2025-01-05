@@ -1,0 +1,304 @@
+﻿@page "/products"
+@using Shared.Models.Dto
+@using Shared.Services
+@using System.Collections.ObjectModel
+@using Shop.BLZR.Services.ServicesDto
+
+<PageTitle>Products</PageTitle>
+
+<h1>Products</h1>
+
+<p>This component demonstrates showing products.</p>
+
+@if (products == null)
+{
+    <p><em>Loading products...</em></p>
+}
+else
+{
+    <div class="mb-3">
+        <h4>Filters</h4>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="filterName">Filter by Name</label>
+                <input type="text" id="filterName" class="form-control" @bind="filterData.Name" placeholder="Enter product name" />
+            </div>
+            <div class="col-md-3">
+                <label for="filterPrice">Filter by Price</label>
+                <input type="number" id="filterPrice" class="form-control" @bind="filterData.Price" placeholder="Enter price" />
+            </div>
+            <div class="col-md-3">
+                <label for="filterCategory">Filter by Category</label>
+                <select id="filterCategory" class="form-control" @bind="filterData.CategoryId">
+                    <option value="">-- All Categories --</option>
+                    @foreach (var category in categories)
+                    {
+                        <option value="@category.CategoryId">@category.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="filterQuantity">Filter by Quantity</label>
+                <input type="number" id="filterQuantity" class="form-control" @bind="filterData.Quantity" placeholder="Enter quantity" />
+            </div>
+        </div>
+
+        <h4 class="mt-4">Sorting</h4>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="sortColumn">Sort By</label>
+                <select id="sortColumn" class="form-control" @onchange="(e) => SetSortColumn(e.Value)">
+                    <option value="">-- None --</option> <!-- Option for no sorting -->
+                    <option value="Name">Name</option>
+                    <option value="Price">Price</option>
+                    <option value="CategoryId">Category</option>
+                    <option value="Quantity">Quantity</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="sortOrder">Sort Order</label>
+                <select id="sortOrder" class="form-control" @bind="SortOrderValue">
+                    <option value="true">Ascending</option>
+                    <option value="false">Descending</option>
+                </select>
+
+            </div>
+        </div>
+
+
+        <button class="btn btn-primary mt-3" @onclick="ApplyFilters">Apply Filters</button>
+        <button class="btn btn-secondary mt-3" @onclick="ResetFilters">Reset Filters</button>
+        <button class="btn btn-primary mt-3" @onclick="ApplyFilters">Apply Sorting</button>
+    </div>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>uantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" value="@product.Name" @oninput="(e) => product.Name = e.Value.ToString()" />
+                    </td>
+                    <td>
+                        <input type="number" class="form-control"
+                               value="@((int)product.Price.GetValueOrDefault(0))"
+                               @oninput="(e) => UpdatePrice(product, e.Value.ToString())" />
+                    </td>
+                    <td>
+                        <select class="form-control" @onchange="(e) => product.CategoryId = int.Parse(e.Value.ToString())">
+                            @foreach (var category in categories)
+                            {
+                                <option value="@category.CategoryId" selected="@(category.CategoryId == product.CategoryId)">
+                                    @category.Name
+                                </option>
+                            }
+                        </select>
+                    </td>
+
+
+
+                    <td>
+                        <input type="number" class="form-control" value="@product.Quantity"
+                        @oninput="(e) => UpdateQuantity(product.Quantity, e.Value.ToString())" />
+                    </td>
+
+                    <td>
+                        <button class="btn btn-primary" @onclick="() => SaveProduct(product)">Save</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteProduct(product)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="d-flex align-items-center mt-4">
+        <!-- Previous Page Button -->
+        <button class="btn btn-outline-primary me-2" @onclick="DecrementPageNumber" disabled="@IsFirstPage">
+            &lt; Previous
+        </button>
+
+        <!-- Current Page Number Display -->
+        <span>Page: <strong>@pageNumber</strong></span>
+
+        <!-- Next Page Button -->
+        <button class="btn btn-outline-primary ms-2" @onclick="IncrementPageNumber">
+            Next &gt;
+        </button>
+
+        <!-- Page Size Input -->
+        <div class="ms-4">
+            <label for="pageSizeInput" class="form-label">Page Size:</label>
+            <input type="number" id="pageSizeInput" class="form-control" style="width: 100px; display: inline;"
+            @bind="pageSize" min="1" />
+        </div>
+    </div>
+
+}
+
+@code {
+    private ObservableCollection<CategoryDto>? categories;
+    private ObservableCollection<ProductDto>? products;
+
+    private ProductDto filterData = new ProductDto();
+    private ProductDto sortBy = new ProductDto();
+    private bool sortRising { get; set; } = true;
+    private string SortOrderValue
+    {
+        get => sortRising ? "true" : "false";
+        set => sortRising = value == "true";
+    }
+    private int pageNumber = 1;
+    private int pageSize = 10;
+    private bool IsFirstPage => pageNumber <= 1; // Disable decrement button on first page
+
+    [Inject] private ICategoryServiceDto _categoryService { get; set; } = null!;
+    [Inject] private IProductServiceDto _productService { get; set; } = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(250);
+
+        await LoadCategories();
+        await LoadProducts();
+    }
+
+    private async Task LoadCategories()
+    {
+        var categoryResponse = await _categoryService.GetAllAsync();
+        if (categoryResponse.Success)
+        {
+            categories = new ObservableCollection<CategoryDto>(categoryResponse.Data);
+        }
+    }
+
+    private async Task LoadProducts()
+    {
+        var productResponse = await _productService.GetAllAsync();
+        if (productResponse.Success)
+            products = new ObservableCollection<ProductDto>(productResponse.Data);
+        productResponse = await _productService.GetFilteredProducts(products, categories, filterData, sortBy, sortRising, pageNumber, pageSize);
+        if (productResponse.Success)
+            products = new ObservableCollection<ProductDto>(productResponse.Data);
+    }
+
+
+    private string GetCategoryName(int? categoryId)
+    {
+        var category = categories?.FirstOrDefault(c => c.CategoryId == categoryId);
+        return category?.Name ?? "Unknown";
+    }
+
+    private async Task DeleteProduct(ProductDto product)
+    {
+        if (product == null)
+            return;
+
+        var response = await _productService.DeleteAsync(product.Id);
+        if (response.Success)
+        {
+            products.Remove(product);
+            StateHasChanged();
+        }
+    }
+
+    private async Task SaveProduct(ProductDto product)
+    {
+        if (product == null)
+            return;
+
+        var productResponse = await _productService.UpdateAsync(product.Id, product);
+        if (productResponse.Success)
+        {
+            StateHasChanged();
+        }
+    }
+
+    private void UpdatePrice(ProductDto product, string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            product.Price = 0; // Lub jakakolwiek inna wartość domyślna, np. `null` jeśli Price jest typu nullable.
+        }
+        else if (decimal.TryParse(value, out var parsedValue))
+        {
+            product.Price = parsedValue;
+        }
+    }
+
+    private void UpdateQuantity(int? quantity, string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            quantity = 0;
+        }
+        else if (int.TryParse(value, out var parsedValue))
+        {
+            quantity = parsedValue;
+        }
+    }
+
+
+    private async Task ApplyFilters()
+    {
+        await LoadProducts();
+        StateHasChanged();
+    }
+
+    private async Task ResetFilters()
+    {
+        filterData = new ProductDto();
+        await ApplyFilters();
+    }
+
+    private void SetSortColumn(object column)
+    {
+        // Reset all sortBy properties to null, and only set the selected column
+        sortBy = new ProductDto();
+
+        if (string.IsNullOrEmpty(column?.ToString()))
+        {
+            return;
+        }
+
+        switch (column.ToString())
+        {
+            case "Name":
+                sortBy.Name = "Name";
+                break;
+            case "Price":
+                sortBy.Price = 0; // Dummy value for indicating sorting by Price
+                break;
+            case "CategoryId":
+                sortBy.CategoryId = 0; // Dummy value for indicating sorting by CategoryId
+                break;
+            case "Quantity":
+                sortBy.Quantity = 0;
+                break;
+        }
+    }
+
+    private async Task DecrementPageNumber()
+    {
+        if (pageNumber > 1)
+        {
+            pageNumber--;
+            await ApplyFilters();
+        }
+    }
+
+    private async Task IncrementPageNumber()
+    {
+        pageNumber++;
+        await ApplyFilters();
+    }
+
+}

@@ -1,0 +1,180 @@
+﻿@page "/orderdetails/{OrderId:int}"
+@using System.Collections.ObjectModel
+@using Shared.Models
+@inject IOrderProductServiceDto OrderProductServiceDto
+@inject IProductServiceDto ProductServiceDto
+@inject IOrderServiceDto OrderServiceDto
+@inject NavigationManager NavigationManager
+
+
+<PageTitle>Order Details</PageTitle>
+
+@if (products == null || selectedProducts == null)
+{
+    <p>Loading products...</p>
+}
+else{
+    <EditForm Model="@this" OnValidSubmit="AddProductAsync">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="container">
+            <!-- Product Selection -->
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Wybierz produkt:</label>
+                <div class="col-sm-6">
+                    <InputSelect @bind-Value="selectedProduct.Id" class="form-control">
+                        <option value="">Wybierz produkt</option>
+                        @foreach (var product in products)
+                        {
+                            <option value="@product.Id">@product.Name</option>
+                        }
+                    </InputSelect>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-primary" @onclick="AddProductAsync">Dodaj produkt</button>
+                </div>
+            </div>
+
+            <!-- Order Products Header -->
+            <h3 class="my-4">Produkty w zamówieniu</h3>
+
+            <!-- Order Products List -->
+            <div class="row">
+                @foreach (var product in selectedProducts)
+                {
+                    <div class="col-sm-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">@product.Name</h5>
+                                <p class="card-text">@product.Name</p>
+                                <p class="card-text">@product.Price</p>
+                                <button class="btn btn-danger" @onclick="() => DeleteProductAsync(product)">Usuń</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </EditForm>
+}
+
+@code {
+    private ObservableCollection<OrderProductDto> orderProducts = new ObservableCollection<OrderProductDto>();
+    private ObservableCollection<ProductDto> products = new ObservableCollection<ProductDto>();
+    private ObservableCollection<ProductDto> selectedProducts = new ObservableCollection<ProductDto>();
+    private ProductDto? selectedProduct = new ProductDto();
+
+    [Parameter]
+    public int OrderId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var uriParts = NavigationManager.Uri.Split("/");
+        if (uriParts.Length > 0 && int.TryParse(uriParts.Last(), out int orderId))
+        {
+            await Task.Delay(250);
+            OrderId = orderId;
+            await LoadProductsToAddList();
+            await LoadProductsToDisplay();
+        }
+
+    }
+
+    private async Task LoadProductsToAddList()
+    {
+        var response = await ProductServiceDto.GetAllAsync();
+
+        await LoadOrderProducts();
+
+
+        if (response.Success)
+        {
+            products = new ObservableCollection<ProductDto>(response.Data);
+            var orderProductIds = new HashSet<int>(orderProducts.Select(op => op.ProductId));
+            var productsToRemove = products.Where(p => orderProductIds.Contains((int)p.Id)).ToList();
+
+            foreach (var product in productsToRemove)
+            {
+                products.Remove(product);
+            }
+        }
+    }
+
+    private async Task LoadOrderProducts()
+    {
+        var response = await OrderServiceDto.GetByIdAsync(OrderId);
+        var order = response.Data;
+        orderProducts = new ObservableCollection<OrderProductDto>(order.OrderProducts);
+    }
+
+    private async Task AddProductAsync()
+    {
+        if (selectedProduct == null || selectedProduct.Id <= 0)
+            return;
+
+        if (selectedProducts.Contains(selectedProduct))
+            return;
+
+
+        var pOrder = new OrderProductDto
+            {
+                ProductId = (int)selectedProduct.Id,
+                OrderId = OrderId
+            };
+
+        var response = await OrderProductServiceDto.CreateAsync(pOrder);
+        if (response.Success)
+        {
+            orderProducts.Add(response.Data);
+            selectedProduct = new ProductDto();
+            await AddProductToList(response.Data.ProductId);
+            products.Remove(products.FirstOrDefault(p => p.Id == response.Data.ProductId));
+        }
+
+        StateHasChanged();
+    }
+
+
+    private async Task DeleteProductAsync(ProductDto product)
+    {
+        if (product == null)
+            return;
+
+        var orderProduct = orderProducts.FirstOrDefault(o => o.ProductId == product.Id);
+        var response = await OrderProductServiceDto.DeleteAsync(new OrderProductKey(orderProduct.ProductId, orderProduct.OrderId));
+
+        if (response.Success)
+        {
+            orderProducts.Remove(orderProduct);
+            products.Add(product);
+            selectedProducts.Remove(product);
+            StateHasChanged();
+        }
+    }
+
+    private async Task AddProductToList(int productId)
+    {
+        var productResponse = await ProductServiceDto.GetByIdAsync(productId);
+
+        if (productResponse.Success && productResponse.Data != null)
+        {
+            if (!products.Any(p => p.Id == productResponse.Data.Id))
+            {
+                selectedProducts.Add(productResponse.Data);
+            }
+        }
+    }
+
+    private async Task LoadProductsToDisplay()
+    {
+        foreach (var orderProduct in orderProducts)
+        {
+            var response = await ProductServiceDto.GetByIdAsync(orderProduct.ProductId);
+            if (response.Success && response.Data != null)
+            {
+                selectedProducts.Add(response.Data);
+            }
+        }
+    }
+}

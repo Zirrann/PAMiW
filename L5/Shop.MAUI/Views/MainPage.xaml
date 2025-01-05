@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Shop.MAUI.ViewModels"
+             x:Class="Shop.MAUI.Views.MainPage"
+             BackgroundColor="#F0F0F0">
+
+    <VerticalStackLayout Padding="20" Spacing="20" VerticalOptions="FillAndExpand">
+
+        <!-- Tytuł aplikacji -->
+        <Label Text="Witaj w aplikacji!"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#2D2D2D"
+               Margin="0, 20, 0, 20" />
+
+        <!-- Przycisk do przejścia do produktów -->
+        <Button Text="Przejdź do produktów"
+                Command="{Binding NavigateToProductsCommand}" 
+                HorizontalOptions="Center"
+                Padding="15"
+                BackgroundColor="#0078D4"
+                TextColor="White"
+                CornerRadius="10"
+                FontSize="18"
+                HeightRequest="50"
+                VerticalOptions="Start" />
+
+        <!-- Lista zamówień -->
+        <CollectionView ItemsSource="{Binding Orders}"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="#D1D1D1"
+                           CornerRadius="10"
+                           Padding="10"
+                           Margin="0, 5"
+                           HasShadow="True">
+                        <Grid RowDefinitions="Auto" ColumnDefinitions="*,*,Auto">
+                            <!-- Kolumna 1: OrderId -->
+                            <Label Text="{Binding OrderId}"
+                                   FontSize="16"
+                                   VerticalTextAlignment="Center"
+                                   Padding="5"
+                                   TextColor="#333"
+                                   Grid.Column="0" />
+
+                            <!-- Kolumna 2: CustomerName -->
+                            <Label Text="{Binding CustomerName}"
+                                   FontSize="16"
+                                   VerticalTextAlignment="Center"
+                                   Padding="5"
+                                   TextColor="#333"
+                                   Grid.Column="1" />
+
+                            <!-- Kolumna 3: Przycisk do szczegółów -->
+                            <Button Text="Szczegóły"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:OrderViewModel}}, Path=ViewOrderDetailsCommand}"
+                                    CommandParameter="{Binding}"
+                                    HorizontalOptions="End"
+                                    Padding="10"
+                                    BackgroundColor="#4CAF50"
+                                    TextColor="White"
+                                    CornerRadius="5"
+                                    HeightRequest="40"
+                                    VerticalOptions="Center"
+                                    Grid.Column="2" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>

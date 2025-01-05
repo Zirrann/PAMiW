@@ -1,0 +1,63 @@
+﻿@page "/"
+@inject IOrderServiceDto OrderService
+@inject NavigationManager NavigationManager
+
+<PageTitle>Zamówienia</PageTitle>
+
+<h3>Zamówienia</h3>
+
+@if (orders == null)
+{
+    <p>Ładowanie...</p>
+}
+else
+{
+    <ul>
+        @foreach (var order in orders)
+        {
+            <li>
+                <div>
+                    <strong>@order.OrderId</strong> - @order.CustomerName
+                    <button @onclick="() => ViewOrderDetails(order)">Szczegóły</button>
+                    <button @onclick="() => DeleteOrder(order)">Usuń</button>
+                </div>
+            </li>
+        }
+    </ul>
+}
+
+@code {
+
+    private List<OrderDto> orders;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadOrdersAsync();
+    }
+
+    private async Task LoadOrdersAsync()
+    {
+        var response = await OrderService.GetAllAsync();
+        if (response.Success)
+        {
+            orders = response.Data.ToList();
+        }
+    }
+
+    private async Task DeleteOrder(OrderDto order)
+    {
+        if (order == null)
+            return;
+
+        var response = await OrderService.DeleteAsync(order.OrderId);
+        if (response.Success)
+        {
+            orders.Remove(order);
+        }
+    }
+    private void ViewOrderDetails(OrderDto order)
+    {
+        // Przechodzimy do strony szczegółów zamówienia, przekazując orderId w URL
+        NavigationManager.NavigateTo($"/orderdetails/{order.OrderId}");
+    }
+}

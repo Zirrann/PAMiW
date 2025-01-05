@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Shared.Models.Dto.OrderDto>
+
+<h1 style="font-size: 28px; font-weight: bold; text-align: center; margin: 20px 0; color: #2D2D2D;">Witaj w aplikacji!</h1>
+<a href="/Product/Index" style="display: inline-block; padding: 15px 20px; background-color: #0078D4; color: white; border-radius: 10px; font-size: 18px; text-align: center; margin-bottom: 20px; text-decoration: none;">Przejdź do produktów</a>
+
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 20px;">
+    @foreach (var order in Model)
+    {
+        <div style="border: 1px solid #D1D1D1; border-radius: 10px; padding: 10px; background-color: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; align-items: center;">
+                <span style="font-size: 16px; color: #333; padding: 5px;">@order.OrderId</span>
+                <span style="font-size: 16px; color: #333; padding: 5px;">@order.CustomerName</span>
+                <div style="display: flex; gap: 5px;">
+                    <a href="/Order/Details/@order.OrderId" style="display: inline-block; padding: 10px 15px; font-size: 14px; background-color: #4CAF50; color: white; border-radius: 5px; text-decoration: none; text-align: center;">Szczegóły</a>
+                    <form method="post" action="/Order/Delete" style="margin: 0; display: inline;">
+                        <input type="hidden" name="id" value="@order.OrderId" />
+                        <button type="submit" style="padding: 10px 15px; font-size: 14px; background-color: #F44336; color: white; border: none; border-radius: 5px; cursor: pointer;">Usuń</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</div>
